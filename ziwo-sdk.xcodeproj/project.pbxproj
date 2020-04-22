@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		EB1FE80724504E4E00830845 /* ziwo_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1FE80524504E4E00830845 /* ziwo_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6449924504EF30077D2DF /* ZiwoSDK.swift */; };
+		EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */; };
+		EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1FE80224504E4E00830845 /* ziwo_sdk.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBB644A524504F230077D2DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB1FE7F924504E4E00830845 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB1FE80124504E4E00830845;
+			remoteInfo = "ziwo-sdk";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EB1FE80224504E4E00830845 /* ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1FE80524504E4E00830845 /* ziwo_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ziwo_sdk.h; sourceTree = "<group>"; };
 		EB1FE80624504E4E00830845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB6449924504EF30077D2DF /* ZiwoSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiwoSDK.swift; sourceTree = "<group>"; };
+		EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ziwo_sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ziwo_sdkTests.swift; sourceTree = "<group>"; };
+		EBB644A324504F230077D2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +41,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB6449C24504F230077D2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1FE80424504E4E00830845 /* ziwo-sdk */,
+				EBB644A024504F230077D2DF /* ziwo_sdkTests */,
 				EB1FE80324504E4E00830845 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1FE80224504E4E00830845 /* ziwo_sdk.framework */,
+				EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,8 +75,18 @@
 			children = (
 				EB1FE80524504E4E00830845 /* ziwo_sdk.h */,
 				EB1FE80624504E4E00830845 /* Info.plist */,
+				EBB6449924504EF30077D2DF /* ZiwoSDK.swift */,
 			);
 			path = "ziwo-sdk";
+			sourceTree = "<group>";
+		};
+		EBB644A024504F230077D2DF /* ziwo_sdkTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */,
+				EBB644A324504F230077D2DF /* Info.plist */,
+			);
+			path = ziwo_sdkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +121,39 @@
 			productReference = EB1FE80224504E4E00830845 /* ziwo_sdk.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EBB6449E24504F230077D2DF /* ziwo_sdkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBB644A724504F230077D2DF /* Build configuration list for PBXNativeTarget "ziwo_sdkTests" */;
+			buildPhases = (
+				EBB6449B24504F230077D2DF /* Sources */,
+				EBB6449C24504F230077D2DF /* Frameworks */,
+				EBB6449D24504F230077D2DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBB644A624504F230077D2DF /* PBXTargetDependency */,
+			);
+			name = ziwo_sdkTests;
+			productName = ziwo_sdkTests;
+			productReference = EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EB1FE7F924504E4E00830845 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = ASWAT;
 				TargetAttributes = {
 					EB1FE80124504E4E00830845 = {
+						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
+					};
+					EBB6449E24504F230077D2DF = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -112,12 +172,20 @@
 			projectRoot = "";
 			targets = (
 				EB1FE80124504E4E00830845 /* ziwo-sdk */,
+				EBB6449E24504F230077D2DF /* ziwo_sdkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EB1FE80024504E4E00830845 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBB6449D24504F230077D2DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,10 +199,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBB6449B24504F230077D2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBB644A624504F230077D2DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB1FE80124504E4E00830845 /* ziwo-sdk */;
+			targetProxy = EBB644A524504F230077D2DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EB1FE80824504E4E00830845 /* Debug */ = {
@@ -260,6 +345,33 @@
 		EB1FE80B24504E4E00830845 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NGYSA26NZC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "ziwo-sdk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdk";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB1FE80C24504E4E00830845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
@@ -279,27 +391,39 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
-		EB1FE80C24504E4E00830845 /* Release */ = {
+		EBB644A824504F230077D2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "ziwo-sdk/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = ziwo_sdkTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdk";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBB644A924504F230077D2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NGYSA26NZC;
+				INFOPLIST_FILE = ziwo_sdkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,6 +446,15 @@
 			buildConfigurations = (
 				EB1FE80B24504E4E00830845 /* Debug */,
 				EB1FE80C24504E4E00830845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBB644A724504F230077D2DF /* Build configuration list for PBXNativeTarget "ziwo_sdkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBB644A824504F230077D2DF /* Debug */,
+				EBB644A924504F230077D2DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
