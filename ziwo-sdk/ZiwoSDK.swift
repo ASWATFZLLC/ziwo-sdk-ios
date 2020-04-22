@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Starscream
 
 public class ZiwoSDK {
     

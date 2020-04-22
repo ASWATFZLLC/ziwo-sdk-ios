@@ -1,16 +1,28 @@
 PODS:
-  - ZiwoSDK (0.0.1)
+  - Starscream (4.0.1)
+  - ZiwoSDK (0.0.1):
+    - Starscream
 
 DEPENDENCIES:
+  - Starscream (from `https://github.com/emersonsoftware/Starscream.git`, branch `master`)
   - ZiwoSDK (from `.`)
 
 EXTERNAL SOURCES:
+  Starscream:
+    :branch: master
+    :git: https://github.com/emersonsoftware/Starscream.git
   ZiwoSDK:
     :path: "."
 
-SPEC CHECKSUMS:
-  ZiwoSDK: 8fc6505bcda034d200e655353b9377f6b7acea8f
+CHECKOUT OPTIONS:
+  Starscream:
+    :commit: 48a8a2cb9d704aa21f2031e181d132d2fd13df6c
+    :git: https://github.com/emersonsoftware/Starscream.git
 
-PODFILE CHECKSUM: 785076c9477a6437c618d53313faf36acb1246f1
+SPEC CHECKSUMS:
+  Starscream: 9dbeec17a9ae4fd4904e8ac36b1ea96b20755959
+  ZiwoSDK: cd9e072f2c6cfe47fef1998774292ba276963f69
+
+PODFILE CHECKSUM: a3443eafa16b67271d3e93d989e193b36139e2db
 
 COCOAPODS: 1.8.4

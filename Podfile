@@ -1,17 +1,23 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
+workspace 'ziwo-sdk.xcworkspace'
 
 target 'ziwo-sdk' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+    use_frameworks!
+    project './ziwo-sdk.xcodeproj'
 
-  # Pods for ziwo-sdk
+    # Pods for ziwo-sdk
+    pod 'Starscream', :git => 'https://github.com/emersonsoftware/Starscream.git', :branch => 'master'
 end
 
 target 'ZiwoExampleApp' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+    use_frameworks!
+    project './ziwo-sdk.xcodeproj'
 
-  # Pods for ZiwoExampleApp
-  pod 'ZiwoSDK', :path => '.'
+    # Pods for ZiwoExampleApp
+    pod 'ZiwoSDK', :path => '.'
+end
+
+target 'ziwo_sdkTests' do
+    use_frameworks!
 end

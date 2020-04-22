@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F7AA4060713405FF038C75E /* Pods_ZiwoExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */; };
-		7EA37FE2422D00E3A3524A25 /* Pods_ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */; };
+		01937E3D406FC22F49B194C1 /* Pods_ZiwoExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7DFE83D271FEFA8DEDD727 /* Pods_ZiwoExampleApp.framework */; };
 		EB1FE80724504E4E00830845 /* ziwo_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1FE80524504E4E00830845 /* ziwo_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6449924504EF30077D2DF /* ZiwoSDK.swift */; };
 		EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */; };
@@ -20,9 +19,18 @@
 		EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */; };
 		EBB644BD245051290077D2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BC245051290077D2DF /* Assets.xcassets */; };
 		EBB644C0245051290077D2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BE245051290077D2DF /* LaunchScreen.storyboard */; };
+		EBB644CB245055810077D2DF /* Pods_ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		F0443B575746ED7FE98F95CB /* Pods_ziwo_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EB549D7E24505E1F004B7CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB1FE7F924504E4E00830845 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB1FE80124504E4E00830845;
+			remoteInfo = "ziwo-sdk";
+		};
 		EBB644A524504F230077D2DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB1FE7F924504E4E00830845 /* Project object */;
@@ -33,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B7DFE83D271FEFA8DEDD727 /* Pods_ZiwoExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiwoExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.debug.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		6DA782843547914AADBA4033 /* Pods-ZiwoExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.debug.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		791FB8EF92BFEFC1B4C2AA94 /* Pods-ZiwoExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		864A5883198F815BFB7C83C9 /* Pods-ziwo_sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo_sdkTests.debug.xcconfig"; path = "Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.release.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ziwo_sdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.debug.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		EB1FE80224504E4E00830845 /* ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1FE80524504E4E00830845 /* ziwo_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ziwo_sdk.h; sourceTree = "<group>"; };
@@ -54,7 +65,8 @@
 		EBB644BC245051290077D2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB644BF245051290077D2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB644C1245051290077D2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiwoExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F948A327E41A2165D1E2C8 /* Pods-ziwo_sdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo_sdkTests.release.xcconfig"; path = "Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA37FE2422D00E3A3524A25 /* Pods_ziwo_sdk.framework in Frameworks */,
+				EBB644CB245055810077D2DF /* Pods_ziwo_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */,
+				F0443B575746ED7FE98F95CB /* Pods_ziwo_sdkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F7AA4060713405FF038C75E /* Pods_ZiwoExampleApp.framework in Frameworks */,
+				01937E3D406FC22F49B194C1 /* Pods_ZiwoExampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +101,10 @@
 		4FE902CED88F4F2E8B9A8DCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */,
+				EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */,
 				323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */,
+				C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */,
+				1B7DFE83D271FEFA8DEDD727 /* Pods_ZiwoExampleApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,10 +112,12 @@
 		9D3134003E164FA7C34EDBAC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */,
-				86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */,
 				E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */,
 				B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */,
+				864A5883198F815BFB7C83C9 /* Pods-ziwo_sdkTests.debug.xcconfig */,
+				F3F948A327E41A2165D1E2C8 /* Pods-ziwo_sdkTests.release.xcconfig */,
+				6DA782843547914AADBA4033 /* Pods-ZiwoExampleApp.debug.xcconfig */,
+				791FB8EF92BFEFC1B4C2AA94 /* Pods-ZiwoExampleApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -181,8 +198,8 @@
 			buildPhases = (
 				0BAD6E1D930B5D54C3EC69AD /* [CP] Check Pods Manifest.lock */,
 				EB1FE7FD24504E4E00830845 /* Headers */,
-				EB1FE7FE24504E4E00830845 /* Sources */,
 				EB1FE7FF24504E4E00830845 /* Frameworks */,
+				EB1FE7FE24504E4E00830845 /* Sources */,
 				EB1FE80024504E4E00830845 /* Resources */,
 			);
 			buildRules = (
@@ -198,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBB644A724504F230077D2DF /* Build configuration list for PBXNativeTarget "ziwo_sdkTests" */;
 			buildPhases = (
+				C75951C7AFA2368DAB5A2257 /* [CP] Check Pods Manifest.lock */,
 				EBB6449B24504F230077D2DF /* Sources */,
 				EBB6449C24504F230077D2DF /* Frameworks */,
 				EBB6449D24504F230077D2DF /* Resources */,
+				561EBBA278F5390072787560 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,15 +235,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBB644C2245051290077D2DF /* Build configuration list for PBXNativeTarget "ZiwoExampleApp" */;
 			buildPhases = (
-				3E3902ECCC4C2EF10F570E8E /* [CP] Check Pods Manifest.lock */,
+				2F11876FC68DB7A638273841 /* [CP] Check Pods Manifest.lock */,
 				EBB644AA245051270077D2DF /* Sources */,
 				EBB644AB245051270077D2DF /* Frameworks */,
 				EBB644AC245051270077D2DF /* Resources */,
-				265C6E650591498D77F2831F /* [CP] Embed Pods Frameworks */,
+				BDBDBCE1EF44312A66E77AD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB549D7F24505E1F004B7CEB /* PBXTargetDependency */,
 			);
 			name = ZiwoExampleApp;
 			productName = ZiwoExampleApp;
@@ -323,7 +343,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		265C6E650591498D77F2831F /* [CP] Embed Pods Frameworks */ = {
+		2F11876FC68DB7A638273841 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZiwoExampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		561EBBA278F5390072787560 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDBDBCE1EF44312A66E77AD6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,7 +399,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3E3902ECCC4C2EF10F570E8E /* [CP] Check Pods Manifest.lock */ = {
+		C75951C7AFA2368DAB5A2257 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,7 +414,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZiwoExampleApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ziwo_sdkTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,6 +454,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EB549D7F24505E1F004B7CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB1FE80124504E4E00830845 /* ziwo-sdk */;
+			targetProxy = EB549D7E24505E1F004B7CEB /* PBXContainerItemProxy */;
+		};
 		EBB644A624504F230077D2DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EB1FE80124504E4E00830845 /* ziwo-sdk */;
@@ -555,6 +619,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "ziwo-sdk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,6 +647,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "ziwo-sdk/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,10 +663,12 @@
 		};
 		EBB644A824504F230077D2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864A5883198F815BFB7C83C9 /* Pods-ziwo_sdkTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
 				INFOPLIST_FILE = ziwo_sdkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,10 +683,12 @@
 		};
 		EBB644A924504F230077D2DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F948A327E41A2165D1E2C8 /* Pods-ziwo_sdkTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
 				INFOPLIST_FILE = ziwo_sdkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,12 +703,13 @@
 		};
 		EBB644C3245051290077D2DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */;
+			baseConfigurationReference = 6DA782843547914AADBA4033 /* Pods-ZiwoExampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
 				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,12 +723,13 @@
 		};
 		EBB644C4245051290077D2DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */;
+			baseConfigurationReference = 791FB8EF92BFEFC1B4C2AA94 /* Pods-ZiwoExampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
 				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
   }
   s.source_files        = "ziwo-sdk/**/*.{h,m,swift}"
   s.public_header_files = "ziwo-sdk/**/*.h"
+  s.dependency 'Starscream'
 end
