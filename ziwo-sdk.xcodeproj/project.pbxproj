@@ -3,14 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F7AA4060713405FF038C75E /* Pods_ZiwoExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */; };
+		7EA37FE2422D00E3A3524A25 /* Pods_ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */; };
 		EB1FE80724504E4E00830845 /* ziwo_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1FE80524504E4E00830845 /* ziwo_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6449924504EF30077D2DF /* ZiwoSDK.swift */; };
 		EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */; };
 		EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1FE80224504E4E00830845 /* ziwo_sdk.framework */; };
+		EBB644B1245051270077D2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B0245051270077D2DF /* AppDelegate.swift */; };
+		EBB644B3245051270077D2DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B2245051270077D2DF /* SceneDelegate.swift */; };
+		EBB644B5245051270077D2DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B4245051270077D2DF /* ViewController.swift */; };
+		EBB644B8245051270077D2DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644B6245051270077D2DF /* Main.storyboard */; };
+		EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */; };
+		EBB644BD245051290077D2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BC245051290077D2DF /* Assets.xcassets */; };
+		EBB644C0245051290077D2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BE245051290077D2DF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.debug.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiwoExampleApp.release.xcconfig"; path = "Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.release.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.debug.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 		EB1FE80224504E4E00830845 /* ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1FE80524504E4E00830845 /* ziwo_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ziwo_sdk.h; sourceTree = "<group>"; };
 		EB1FE80624504E4E00830845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +45,16 @@
 		EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ziwo_sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ziwo_sdkTests.swift; sourceTree = "<group>"; };
 		EBB644A324504F230077D2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB644AE245051270077D2DF /* ZiwoExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiwoExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB644B0245051270077D2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBB644B2245051270077D2DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBB644B4245051270077D2DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBB644B7245051270077D2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBB644BA245051270077D2DF /* ZiwoExampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZiwoExampleApp.xcdatamodel; sourceTree = "<group>"; };
+		EBB644BC245051290077D2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBB644BF245051290077D2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBB644C1245051290077D2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiwoExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA37FE2422D00E3A3524A25 /* Pods_ziwo_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,15 +74,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB644AB245051270077D2DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7AA4060713405FF038C75E /* Pods_ZiwoExampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FE902CED88F4F2E8B9A8DCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFC19F6EF88CE04A88188A05 /* Pods_ZiwoExampleApp.framework */,
+				323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D3134003E164FA7C34EDBAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */,
+				86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */,
+				E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */,
+				B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB1FE7F824504E4E00830845 = {
 			isa = PBXGroup;
 			children = (
 				EB1FE80424504E4E00830845 /* ziwo-sdk */,
 				EBB644A024504F230077D2DF /* ziwo_sdkTests */,
+				EBB644AF245051270077D2DF /* ZiwoExampleApp */,
 				EB1FE80324504E4E00830845 /* Products */,
+				9D3134003E164FA7C34EDBAC /* Pods */,
+				4FE902CED88F4F2E8B9A8DCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +122,7 @@
 			children = (
 				EB1FE80224504E4E00830845 /* ziwo_sdk.framework */,
 				EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */,
+				EBB644AE245051270077D2DF /* ZiwoExampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +146,21 @@
 			path = ziwo_sdkTests;
 			sourceTree = "<group>";
 		};
+		EBB644AF245051270077D2DF /* ZiwoExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				EBB644B0245051270077D2DF /* AppDelegate.swift */,
+				EBB644B2245051270077D2DF /* SceneDelegate.swift */,
+				EBB644B4245051270077D2DF /* ViewController.swift */,
+				EBB644B6245051270077D2DF /* Main.storyboard */,
+				EBB644BC245051290077D2DF /* Assets.xcassets */,
+				EBB644BE245051290077D2DF /* LaunchScreen.storyboard */,
+				EBB644C1245051290077D2DF /* Info.plist */,
+				EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */,
+			);
+			path = ZiwoExampleApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -107,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB1FE80A24504E4E00830845 /* Build configuration list for PBXNativeTarget "ziwo-sdk" */;
 			buildPhases = (
+				0BAD6E1D930B5D54C3EC69AD /* [CP] Check Pods Manifest.lock */,
 				EB1FE7FD24504E4E00830845 /* Headers */,
 				EB1FE7FE24504E4E00830845 /* Sources */,
 				EB1FE7FF24504E4E00830845 /* Frameworks */,
@@ -139,6 +212,25 @@
 			productReference = EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EBB644AD245051270077D2DF /* ZiwoExampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBB644C2245051290077D2DF /* Build configuration list for PBXNativeTarget "ZiwoExampleApp" */;
+			buildPhases = (
+				3E3902ECCC4C2EF10F570E8E /* [CP] Check Pods Manifest.lock */,
+				EBB644AA245051270077D2DF /* Sources */,
+				EBB644AB245051270077D2DF /* Frameworks */,
+				EBB644AC245051270077D2DF /* Resources */,
+				265C6E650591498D77F2831F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZiwoExampleApp;
+			productName = ZiwoExampleApp;
+			productReference = EBB644AE245051270077D2DF /* ZiwoExampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +246,9 @@
 						LastSwiftMigration = 1140;
 					};
 					EBB6449E24504F230077D2DF = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					EBB644AD245051270077D2DF = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -173,6 +268,7 @@
 			targets = (
 				EB1FE80124504E4E00830845 /* ziwo-sdk */,
 				EBB6449E24504F230077D2DF /* ziwo_sdkTests */,
+				EBB644AD245051270077D2DF /* ZiwoExampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -192,7 +288,81 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB644AC245051270077D2DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB644C0245051290077D2DF /* LaunchScreen.storyboard in Resources */,
+				EBB644BD245051290077D2DF /* Assets.xcassets in Resources */,
+				EBB644B8245051270077D2DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BAD6E1D930B5D54C3EC69AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ziwo-sdk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		265C6E650591498D77F2831F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZiwoExampleApp/Pods-ZiwoExampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E3902ECCC4C2EF10F570E8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZiwoExampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB1FE7FE24504E4E00830845 /* Sources */ = {
@@ -211,6 +381,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB644AA245051270077D2DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB644B5245051270077D2DF /* ViewController.swift in Sources */,
+				EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */,
+				EBB644B1245051270077D2DF /* AppDelegate.swift in Sources */,
+				EBB644B3245051270077D2DF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -220,6 +401,25 @@
 			targetProxy = EBB644A524504F230077D2DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBB644B6245051270077D2DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBB644B7245051270077D2DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBB644BE245051290077D2DF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBB644BF245051290077D2DF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EB1FE80824504E4E00830845 /* Debug */ = {
@@ -344,6 +544,7 @@
 		};
 		EB1FE80B24504E4E00830845 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,6 +571,7 @@
 		};
 		EB1FE80C24504E4E00830845 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -429,6 +631,44 @@
 			};
 			name = Release;
 		};
+		EBB644C3245051290077D2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D4371CFAAE015DCC659460 /* Pods-ZiwoExampleApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NGYSA26NZC;
+				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ios.kalvad.aswat.ZiwoExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBB644C4245051290077D2DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F42F31F40A6D251F0C20AC /* Pods-ZiwoExampleApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NGYSA26NZC;
+				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ios.kalvad.aswat.ZiwoExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,7 +699,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EBB644C2245051290077D2DF /* Build configuration list for PBXNativeTarget "ZiwoExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBB644C3245051290077D2DF /* Debug */,
+				EBB644C4245051290077D2DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EBB644BA245051270077D2DF /* ZiwoExampleApp.xcdatamodel */,
+			);
+			currentVersion = EBB644BA245051270077D2DF /* ZiwoExampleApp.xcdatamodel */;
+			path = ZiwoExampleApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EB1FE7F924504E4E00830845 /* Project object */;
 }

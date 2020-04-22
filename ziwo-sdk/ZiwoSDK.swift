@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ZiwoSDK {
+public class ZiwoSDK {
     
     public init() {}
     
-    func testHelloWorld() -> String {
+    public func testHelloWorld() -> String {
         return "hello world"
     }
     
