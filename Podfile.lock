@@ -1,11 +1,20 @@
 PODS:
+  - Defaults (3.1.1)
   - Starscream (4.0.1)
+  - SwiftyJSON (5.0.0)
   - ZiwoSDK (0.0.1):
     - Starscream
 
 DEPENDENCIES:
+  - Defaults
   - Starscream (from `https://github.com/emersonsoftware/Starscream.git`, branch `master`)
+  - SwiftyJSON
   - ZiwoSDK (from `.`)
+
+SPEC REPOS:
+  trunk:
+    - Defaults
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   Starscream:
@@ -20,9 +29,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/emersonsoftware/Starscream.git
 
 SPEC CHECKSUMS:
+  Defaults: bcfbdb87d0b63fb302d70791b72f62f0f29d26aa
   Starscream: 9dbeec17a9ae4fd4904e8ac36b1ea96b20755959
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   ZiwoSDK: cd9e072f2c6cfe47fef1998774292ba276963f69
 
-PODFILE CHECKSUM: a3443eafa16b67271d3e93d989e193b36139e2db
+PODFILE CHECKSUM: cfc86b91ea425ab03a41c7a2524b8ebd51d4b725
 
 COCOAPODS: 1.8.4

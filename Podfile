@@ -8,6 +8,8 @@ target 'ziwo-sdk' do
 
     # Pods for ziwo-sdk
     pod 'Starscream', :git => 'https://github.com/emersonsoftware/Starscream.git', :branch => 'master'
+    pod 'SwiftyJSON'
+    pod 'Defaults'
 end
 
 target 'ZiwoExampleApp' do
