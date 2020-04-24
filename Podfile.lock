@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.1.0)
   - Defaults (4.0.0)
+  - GoogleWebRTC (1.1.29400)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
     - PromiseKit/Foundation (= 6.13.1)
@@ -14,12 +15,15 @@ PODS:
   - SwiftyJSON (5.0.0)
   - ZiwoSDK (0.0.1):
     - Defaults
+    - GoogleWebRTC
+    - PromiseKit
     - Starscream
     - SwiftyJSON
 
 DEPENDENCIES:
   - Alamofire
   - Defaults
+  - GoogleWebRTC
   - PromiseKit
   - Starscream (from `https://github.com/emersonsoftware/Starscream.git`, branch `master`)
   - SwiftyJSON
@@ -29,6 +33,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Defaults
+    - GoogleWebRTC
     - PromiseKit
     - SwiftyJSON
 
@@ -47,11 +52,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Defaults: bd35cdccb03e81e8ec158dea6518b94c321de403
+  GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Starscream: 9dbeec17a9ae4fd4904e8ac36b1ea96b20755959
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  ZiwoSDK: 7f3e85618681822d2121c66e3c80538cfd3de287
+  ZiwoSDK: 42294cabc53f4d92df59d91838dba84fd5ab51f0
 
-PODFILE CHECKSUM: 67ff0390d55c71f0ee168523ffc51ae4c2e797d4
+PODFILE CHECKSUM: 1b522cb4a5de85579d7ece415c70136313d907da
 
 COCOAPODS: 1.8.4

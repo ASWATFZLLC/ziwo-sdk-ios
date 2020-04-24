@@ -17,4 +17,6 @@ Pod::Spec.new do |s|
   s.dependency 'Starscream'
   s.dependency 'SwiftyJSON'
   s.dependency 'Defaults'
+  s.dependency 'GoogleWebRTC'
+  s.dependency 'PromiseKit'
 end

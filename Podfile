@@ -10,6 +10,8 @@ target 'ziwo-sdk' do
     pod 'Starscream', :git => 'https://github.com/emersonsoftware/Starscream.git', :branch => 'master'
     pod 'SwiftyJSON'
     pod 'Defaults'
+    pod 'GoogleWebRTC'
+    pod 'PromiseKit'
 end
 
 target 'ZiwoExampleApp' do
@@ -19,7 +21,6 @@ target 'ZiwoExampleApp' do
     # Pods for ZiwoExampleApp
     pod 'ZiwoSDK', :path => '.'
     pod 'Alamofire'
-    pod 'PromiseKit'
 end
 
 target 'ziwo_sdkTests' do
