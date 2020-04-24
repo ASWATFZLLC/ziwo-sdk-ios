@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let accessToken = ZiwoSDK.shared.accessToken {
             if !accessToken.isEmpty {
-                vc.redirectLoggedUser()
+                vc.redirectLoggedAgent()
             }
         }
         

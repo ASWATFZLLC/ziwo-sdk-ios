@@ -29,6 +29,8 @@
 		EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */; };
 		EBB644BD245051290077D2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BC245051290077D2DF /* Assets.xcassets */; };
 		EBB644C0245051290077D2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BE245051290077D2DF /* LaunchScreen.storyboard */; };
+		EBF65F2F245317EC0024910F /* AgentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF65F2E245317EC0024910F /* AgentViewController.swift */; };
+		EBF65F31245320E00024910F /* ZiwoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF65F30245320E00024910F /* ZiwoClient.swift */; };
 		F0443B575746ED7FE98F95CB /* Pods_ziwo_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		EBB644BF245051290077D2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBB644C1245051290077D2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBF65F2E245317EC0024910F /* AgentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewController.swift; sourceTree = "<group>"; };
+		EBF65F30245320E00024910F /* ZiwoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiwoClient.swift; sourceTree = "<group>"; };
 		F3F948A327E41A2165D1E2C8 /* Pods-ziwo_sdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo_sdkTests.release.xcconfig"; path = "Target Support Files/Pods-ziwo_sdkTests/Pods-ziwo_sdkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,7 @@
 				EB01B46D2452EFC300B481A3 /* Objects */,
 				EB549D8B2451BB1F004B7CEB /* MISC */,
 				EB549D802451B4C4004B7CEB /* WebSockets */,
+				EBF65F30245320E00024910F /* ZiwoClient.swift */,
 				EBB6449924504EF30077D2DF /* ZiwoSDK.swift */,
 				EB1FE80524504E4E00830845 /* ziwo_sdk.h */,
 				EB1FE80624504E4E00830845 /* Info.plist */,
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				EB549D8F2452DDA0004B7CEB /* MISC */,
+				EBF65F2D245317CB0024910F /* Logged */,
 				EBB644B4245051270077D2DF /* LoginViewController.swift */,
 			);
 			path = Sources;
@@ -255,6 +261,14 @@
 				EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */,
 			);
 			path = ZiwoExampleApp;
+			sourceTree = "<group>";
+		};
+		EBF65F2D245317CB0024910F /* Logged */ = {
+			isa = PBXGroup;
+			children = (
+				EBF65F2E245317EC0024910F /* AgentViewController.swift */,
+			);
+			path = Logged;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +525,7 @@
 				EB01B46F2452EFDC00B481A3 /* Agent.swift in Sources */,
 				EB549D8A2451BB1A004B7CEB /* VertoHelpers.swift in Sources */,
 				EB549D842451B4F7004B7CEB /* VertoWebSocket.swift in Sources */,
+				EBF65F31245320E00024910F /* ZiwoClient.swift in Sources */,
 				EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */,
 				EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */,
 				EB549D862451B515004B7CEB /* DomainWebSocket.swift in Sources */,
@@ -532,6 +547,7 @@
 			files = (
 				EB549D912452DDC5004B7CEB /* Utils.swift in Sources */,
 				EBB644B5245051270077D2DF /* LoginViewController.swift in Sources */,
+				EBF65F2F245317EC0024910F /* AgentViewController.swift in Sources */,
 				EB01B46C2452E9D200B481A3 /* Network.swift in Sources */,
 				EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */,
 				EBB644B1245051270077D2DF /* AppDelegate.swift in Sources */,

@@ -78,8 +78,13 @@ class LoginViewController: UIViewController {
         self.view.addSubview(self.loginButton!)
     }
     
-    func redirectLoggedAgent() {
+    public func redirectLoggedAgent(animated: Bool = false) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AgentNavigationController")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationCapturesStatusBarAppearance = true
         
+        self.present(vc, animated: animated)
     }
     
     // MARK: - OBJC Methods
@@ -109,12 +114,11 @@ class LoginViewController: UIViewController {
                         - Set the current agent
                         - Connect the verto websocket
                         - Connect the domain websocket
+                     The two last steps will be implemented in your logged view.
                     */
-                    
                     ZiwoSDK.shared.setAgent(agent: agent)
-                    ZiwoSDK.shared.initializeSDK()
                     
-                    self.redirectLoggedAgent()
+                    self.redirectLoggedAgent(animated: true)
                 }.catch { error in
                     print("[Example App Login] - Error while trying to fetch agent profile : \(error.localizedDescription)")
                 }
