@@ -11,9 +11,4 @@ import XCTest
 
 class ziwo_sdkTests: XCTestCase {
 
-    func testHelloWorld() {
-        let ziwodSDK = ZiwoSDK()
-        XCTAssertEqual(ziwodSDK.testHelloWorld(), "hello world")
-    }
-
 }

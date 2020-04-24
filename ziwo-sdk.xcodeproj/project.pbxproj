@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		01937E3D406FC22F49B194C1 /* Pods_ZiwoExampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7DFE83D271FEFA8DEDD727 /* Pods_ZiwoExampleApp.framework */; };
+		EB01B46C2452E9D200B481A3 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01B46B2452E9D200B481A3 /* Network.swift */; };
+		EB01B46F2452EFDC00B481A3 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01B46E2452EFDC00B481A3 /* Agent.swift */; };
 		EB1FE80724504E4E00830845 /* ziwo_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1FE80524504E4E00830845 /* ziwo_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D812451B4DB004B7CEB /* ZiwoWebSocket.swift */; };
 		EB549D842451B4F7004B7CEB /* VertoWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D832451B4F7004B7CEB /* VertoWebSocket.swift */; };
 		EB549D862451B515004B7CEB /* DomainWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D852451B515004B7CEB /* DomainWebSocket.swift */; };
 		EB549D8A2451BB1A004B7CEB /* VertoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D892451BB1A004B7CEB /* VertoHelpers.swift */; };
 		EB549D8D2451C11A004B7CEB /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D8C2451C11A004B7CEB /* DefaultKeys.swift */; };
+		EB549D912452DDC5004B7CEB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D902452DDC5004B7CEB /* Utils.swift */; };
+		EB549D922452E1D8004B7CEB /* Pods_ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */; };
+		EB549D932452E1D8004B7CEB /* Pods_ziwo_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6449924504EF30077D2DF /* ZiwoSDK.swift */; };
 		EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */; };
 		EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1FE80224504E4E00830845 /* ziwo_sdk.framework */; };
 		EBB644B1245051270077D2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B0245051270077D2DF /* AppDelegate.swift */; };
 		EBB644B3245051270077D2DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B2245051270077D2DF /* SceneDelegate.swift */; };
-		EBB644B5245051270077D2DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B4245051270077D2DF /* ViewController.swift */; };
+		EBB644B5245051270077D2DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B4245051270077D2DF /* LoginViewController.swift */; };
 		EBB644B8245051270077D2DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644B6245051270077D2DF /* Main.storyboard */; };
 		EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBB644B9245051270077D2DF /* ZiwoExampleApp.xcdatamodeld */; };
 		EBB644BD245051290077D2DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BC245051290077D2DF /* Assets.xcassets */; };
 		EBB644C0245051290077D2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB644BE245051290077D2DF /* LaunchScreen.storyboard */; };
-		EBB644CB245055810077D2DF /* Pods_ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB644CA245055810077D2DF /* Pods_ziwo_sdk.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F0443B575746ED7FE98F95CB /* Pods_ziwo_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EB549D942452E1D8004B7CEB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EB549D932452E1D8004B7CEB /* Pods_ziwo_sdk.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1B7DFE83D271FEFA8DEDD727 /* Pods_ZiwoExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiwoExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323AAE8FEEB271D09B873022 /* Pods_ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +72,8 @@
 		B613E41E7789A84AE725FCF6 /* Pods-ziwo-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.release.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.release.xcconfig"; sourceTree = "<group>"; };
 		C72A88ED0B78B07265220E5E /* Pods_ziwo_sdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ziwo_sdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A88C6B6E082A4EF066E276 /* Pods-ziwo-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ziwo-sdk.debug.xcconfig"; path = "Target Support Files/Pods-ziwo-sdk/Pods-ziwo-sdk.debug.xcconfig"; sourceTree = "<group>"; };
+		EB01B46B2452E9D200B481A3 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EB01B46E2452EFDC00B481A3 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		EB1FE80224504E4E00830845 /* ziwo_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ziwo_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1FE80524504E4E00830845 /* ziwo_sdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ziwo_sdk.h; sourceTree = "<group>"; };
 		EB1FE80624504E4E00830845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +82,7 @@
 		EB549D852451B515004B7CEB /* DomainWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainWebSocket.swift; sourceTree = "<group>"; };
 		EB549D892451BB1A004B7CEB /* VertoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertoHelpers.swift; sourceTree = "<group>"; };
 		EB549D8C2451C11A004B7CEB /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		EB549D902452DDC5004B7CEB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EBB6449924504EF30077D2DF /* ZiwoSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiwoSDK.swift; sourceTree = "<group>"; };
 		EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ziwo_sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ziwo_sdkTests.swift; sourceTree = "<group>"; };
@@ -69,7 +90,7 @@
 		EBB644AE245051270077D2DF /* ZiwoExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiwoExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB644B0245051270077D2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBB644B2245051270077D2DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBB644B4245051270077D2DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBB644B4245051270077D2DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EBB644B7245051270077D2DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBB644BA245051270077D2DF /* ZiwoExampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZiwoExampleApp.xcdatamodel; sourceTree = "<group>"; };
 		EBB644BC245051290077D2DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB644CB245055810077D2DF /* Pods_ziwo_sdk.framework in Frameworks */,
+				EB549D922452E1D8004B7CEB /* Pods_ziwo_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +153,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EB01B46D2452EFC300B481A3 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				EB01B46E2452EFDC00B481A3 /* Agent.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		EB1FE7F824504E4E00830845 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +186,7 @@
 		EB1FE80424504E4E00830845 /* ziwo-sdk */ = {
 			isa = PBXGroup;
 			children = (
+				EB01B46D2452EFC300B481A3 /* Objects */,
 				EB549D8B2451BB1F004B7CEB /* MISC */,
 				EB549D802451B4C4004B7CEB /* WebSockets */,
 				EBB6449924504EF30077D2DF /* ZiwoSDK.swift */,
@@ -185,6 +215,24 @@
 			path = MISC;
 			sourceTree = "<group>";
 		};
+		EB549D8E2452CF7A004B7CEB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EB549D8F2452DDA0004B7CEB /* MISC */,
+				EBB644B4245051270077D2DF /* LoginViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EB549D8F2452DDA0004B7CEB /* MISC */ = {
+			isa = PBXGroup;
+			children = (
+				EB549D902452DDC5004B7CEB /* Utils.swift */,
+				EB01B46B2452E9D200B481A3 /* Network.swift */,
+			);
+			path = MISC;
+			sourceTree = "<group>";
+		};
 		EBB644A024504F230077D2DF /* ziwo_sdkTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,9 +245,9 @@
 		EBB644AF245051270077D2DF /* ZiwoExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				EB549D8E2452CF7A004B7CEB /* Sources */,
 				EBB644B0245051270077D2DF /* AppDelegate.swift */,
 				EBB644B2245051270077D2DF /* SceneDelegate.swift */,
-				EBB644B4245051270077D2DF /* ViewController.swift */,
 				EBB644B6245051270077D2DF /* Main.storyboard */,
 				EBB644BC245051290077D2DF /* Assets.xcassets */,
 				EBB644BE245051290077D2DF /* LaunchScreen.storyboard */,
@@ -232,6 +280,7 @@
 				EB1FE7FF24504E4E00830845 /* Frameworks */,
 				EB1FE7FE24504E4E00830845 /* Sources */,
 				EB1FE80024504E4E00830845 /* Resources */,
+				EB549D942452E1D8004B7CEB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -459,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB01B46F2452EFDC00B481A3 /* Agent.swift in Sources */,
 				EB549D8A2451BB1A004B7CEB /* VertoHelpers.swift in Sources */,
 				EB549D842451B4F7004B7CEB /* VertoWebSocket.swift in Sources */,
 				EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */,
@@ -480,7 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB644B5245051270077D2DF /* ViewController.swift in Sources */,
+				EB549D912452DDC5004B7CEB /* Utils.swift in Sources */,
+				EBB644B5245051270077D2DF /* LoginViewController.swift in Sources */,
+				EB01B46C2452E9D200B481A3 /* Network.swift in Sources */,
 				EBB644BB245051270077D2DF /* ZiwoExampleApp.xcdatamodeld in Sources */,
 				EBB644B1245051270077D2DF /* AppDelegate.swift in Sources */,
 				EBB644B3245051270077D2DF /* SceneDelegate.swift in Sources */,
@@ -580,6 +632,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -636,6 +689,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -664,6 +718,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -692,6 +747,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ios.kalvad.aswat.ziwo-sdk";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

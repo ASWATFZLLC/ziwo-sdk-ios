@@ -16,6 +16,6 @@ extension Defaults.Keys {
     static let agentCCPassword = Key<String?>("agentCCPassword", default: "")
     
     // API Related
-    static let domain = Key<String>("domain", default: "")
+    static let domain = Key<String?>("domain", default: "")
     static let accessToken = Key<String?>("accessToken", default: "")
 }

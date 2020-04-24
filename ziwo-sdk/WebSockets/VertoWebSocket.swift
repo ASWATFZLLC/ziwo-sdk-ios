@@ -110,7 +110,7 @@ public class VertoWebSocket: ZiwoWebSocket {
     // MARK: - Mod_verto Methods
     
     func sendLoginRequest() {
-        guard let ccLogin = Defaults[.agentEmail], let ccPassword = Defaults[.agentCCPassword] else {
+        guard let ccLogin = Defaults[.agentCCLogin], let ccPassword = Defaults[.agentCCPassword] else {
             return
         }
 

@@ -45,13 +45,18 @@ class VertoHelpers {
     }
     
     static func getLoginRPC(agentNumber: String, ccPassword: String) -> JSON {
+        guard let domain = Defaults[.domain] else {
+            return JSON()
+        }
+        
         let password = VertoHelpers.toMd5(value: "\(agentNumber + ccPassword)")
         let sessId = UUID().uuidString.lowercased()
+        
         return JSON([
             "jsonrpc": "2.0",
             "method": "login",
             "params": [
-                "login": "agent-\(agentNumber)@\(Defaults[.domain])",
+                "login": "agent-\(agentNumber)@\(domain)-api.aswat.co",
                 "passwd": "\(password)",
                 "sessid": "\(sessId)",
             ],

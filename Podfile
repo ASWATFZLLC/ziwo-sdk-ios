@@ -18,6 +18,8 @@ target 'ZiwoExampleApp' do
 
     # Pods for ZiwoExampleApp
     pod 'ZiwoSDK', :path => '.'
+    pod 'Alamofire'
+    pod 'PromiseKit'
 end
 
 target 'ziwo_sdkTests' do
