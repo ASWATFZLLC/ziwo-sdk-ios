@@ -13,7 +13,7 @@ class AgentViewController: UIViewController {
     
     // MARK: - Vars
     
-    var ziwoClient: ZiwoClient?
+    var ziwoClient: ZiwoClient = ZiwoClient()
     
     // MARK: - UI Vars
     
@@ -36,8 +36,21 @@ class AgentViewController: UIViewController {
     func initializeZiwoClient() {
         // MARK: - Initialize domain & verto websockets in viewDidLoad to be sure they're always running.
         
-        self.ziwoClient = ZiwoClient()
-        self.ziwoClient?.initializeClient()
+        Network.getProfile().done { agent in
+            
+            /** NOTE: - After those steps, the only things missing for the Ziwo SDK initialization are :
+                - Set the current agent
+                - Connect the verto websocket
+                - Connect the domain websocket
+             The two last steps will be implemented in your logged view.
+            */
+            ZiwoSDK.shared.setAgent(agent: agent)
+            
+            self.ziwoClient.initializeClient()
+            self.ziwoClient.domainDebug = false
+        }.catch { error in
+            print("[Example App Login] - Error while trying to fetch agent profile : \(error.localizedDescription)")
+        }
     }
     
     // MARK: - UI Methods
@@ -67,7 +80,11 @@ class AgentViewController: UIViewController {
     // MARK: - OBJC Methods
     
     @objc func callButtonPressed() {
+        guard let recipientNumber = self.dialPad?.text else {
+            return
+        }
         
+        self.ziwoClient.call(number: recipientNumber)
     }
 
 }

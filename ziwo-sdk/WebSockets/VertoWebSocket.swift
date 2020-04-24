@@ -26,7 +26,7 @@ protocol VertoWebSocketDelegate {
 public class VertoWebSocket: ZiwoWebSocket {
     
     private var delegate: VertoWebSocketDelegate?
-    private var sessionID: String = ""
+    public var sessionID: String = ""
     
     // MARK: - Initializer
     

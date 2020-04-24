@@ -108,20 +108,7 @@ class LoginViewController: UIViewController {
             ZiwoSDK.shared.accessToken = accessToken
             
             Network.autoLogin().done { _ in
-                Network.getProfile().done { agent in
-                    
-                    /** NOTE: - After those steps, the only things missing for the Ziwo SDK initialization are :
-                        - Set the current agent
-                        - Connect the verto websocket
-                        - Connect the domain websocket
-                     The two last steps will be implemented in your logged view.
-                    */
-                    ZiwoSDK.shared.setAgent(agent: agent)
-                    
-                    self.redirectLoggedAgent(animated: true)
-                }.catch { error in
-                    print("[Example App Login] - Error while trying to fetch agent profile : \(error.localizedDescription)")
-                }
+                self.redirectLoggedAgent()
             }.catch { error in
                 print("[Example App Login] - Error while trying to authenticate agent : \(error.localizedDescription)")
             }

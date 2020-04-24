@@ -38,11 +38,15 @@ public class ZiwoSDK {
         }
     }
     
+    public var agent: Agent?
+    
     // MARK: - Initialization Methods
     
     public init() { }
     
     public func setAgent(agent: Agent) {
+        self.agent = agent
+        
         Defaults[.agentEmail] = agent.email
         Defaults[.agentCCLogin] = agent.ccLogin
         Defaults[.agentCCPassword] = agent.ccPassword

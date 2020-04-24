@@ -24,6 +24,7 @@
 		EB989DED245327D8003D895B /* RTCOfferMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989DEC245327D8003D895B /* RTCOfferMessage.swift */; };
 		EB989DEF245327E8003D895B /* RTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989DEE245327E8003D895B /* RTCClient.swift */; };
 		EB989DF1245327F7003D895B /* RTCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989DF0245327F7003D895B /* RTCMessage.swift */; };
+		EB989DF324532DA0003D895B /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB989DF224532DA0003D895B /* Call.swift */; };
 		EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6449924504EF30077D2DF /* ZiwoSDK.swift */; };
 		EBB644A224504F230077D2DF /* ziwo_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */; };
 		EBB644A424504F230077D2DF /* ziwo_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1FE80224504E4E00830845 /* ziwo_sdk.framework */; };
@@ -95,6 +96,7 @@
 		EB989DEC245327D8003D895B /* RTCOfferMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCOfferMessage.swift; sourceTree = "<group>"; };
 		EB989DEE245327E8003D895B /* RTCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCClient.swift; sourceTree = "<group>"; };
 		EB989DF0245327F7003D895B /* RTCMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCMessage.swift; sourceTree = "<group>"; };
+		EB989DF224532DA0003D895B /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		EBB6449924504EF30077D2DF /* ZiwoSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiwoSDK.swift; sourceTree = "<group>"; };
 		EBB6449F24504F230077D2DF /* ziwo_sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ziwo_sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB644A124504F230077D2DF /* ziwo_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ziwo_sdkTests.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				EB01B46E2452EFDC00B481A3 /* Agent.swift */,
+				EB989DF224532DA0003D895B /* Call.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				EB549D8A2451BB1A004B7CEB /* VertoHelpers.swift in Sources */,
 				EB549D842451B4F7004B7CEB /* VertoWebSocket.swift in Sources */,
 				EB989DF1245327F7003D895B /* RTCMessage.swift in Sources */,
+				EB989DF324532DA0003D895B /* Call.swift in Sources */,
 				EBF65F31245320E00024910F /* ZiwoClient.swift in Sources */,
 				EB989DE924532703003D895B /* RTCCandidateMessage.swift in Sources */,
 				EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */,
@@ -661,6 +665,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -725,6 +730,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

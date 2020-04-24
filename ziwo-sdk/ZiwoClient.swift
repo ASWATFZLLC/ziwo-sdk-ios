@@ -29,7 +29,7 @@ public class ZiwoClient {
     var delegate: ZiwoClientDelegate?
     
     public var vertoDebug: Bool = true {
-        didSet(bool) {
+        willSet(bool) {
             guard let vertoWS = self.vertoWebSocket else {
                 return
             }
@@ -39,7 +39,7 @@ public class ZiwoClient {
     }
     
     public var domainDebug: Bool = true {
-        didSet(bool) {
+        willSet(bool) {
             guard let domainWS = self.domainWebSocket else {
                 return
             }
@@ -81,6 +81,34 @@ public class ZiwoClient {
                 self.domainWebSocket = DomainWebSocket(url: domainSocketUrl, delegate: self)
                 self.domainWebSocket?.connect()
             }
+        }
+    }
+    
+    // MARK: - Client Methods
+    
+    public func call(number: String) {
+        guard let vertoWS = self.vertoWebSocket, let ccLogin = ZiwoSDK.shared.agent?.ccLogin,
+            let agentEmail = ZiwoSDK.shared.agent?.email else {
+                return
+        }
+        
+        let call = Call(callID: UUID().uuidString.lowercased(), sessID: vertoWS.sessionID,
+                        callerName: ccLogin, recipientName: number)
+
+        call.rtcClient.createOffer().done { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                VertoHelpers.REMOTE_NUMBER = number
+
+                guard let peerConnection = call.rtcClient.peerConnection, let sdp = peerConnection.localDescription?.sdp,
+                    let callRPC = VertoHelpers.createCallRPC(method: "invite", agent: agentEmail, sdp: sdp,
+                                                             sessId: vertoWS.sessionID, callID: call.callID).rawString() else {
+                    return
+                }
+
+                vertoWS.sendCallCreation(callID: call.callID, callRPC: callRPC)
+            }
+        }.catch { error in
+            print("[DialPadController - Call Processing] - Error occured while creating offer : \(error.localizedDescription)")
         }
     }
 }
