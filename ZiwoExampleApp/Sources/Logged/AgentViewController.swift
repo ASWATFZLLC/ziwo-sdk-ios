@@ -76,21 +76,38 @@ class AgentViewController: UIViewController {
         
         self.callButton = UIButton(frame: CGRect(x: 20, y: Frame.below(view: self.dialPad, withOffset: 20),
                                                   width: self.view.frame.width - 40, height: 30))
-        self.callButton?.addTarget(self, action: #selector(self.callButtonPressed), for: .touchUpInside)
+        self.callButton?.addTarget(self, action: #selector(self.callPressed), for: .touchUpInside)
         self.callButton?.backgroundColor = .green
         self.callButton?.titleLabel?.tintColor = .white
         self.callButton?.setTitle("Call", for: .normal)
         self.view.addSubview(self.callButton!)
     }
     
+    func handleButtonCall(isCalling: Bool) {
+        self.callButton?.backgroundColor = isCalling ? .red : .green
+        self.callButton?.setTitle(isCalling ? "Hang Up" : "Call", for: .normal)
+        
+        self.callButton?.removeTarget(nil, action: nil, for: .allEvents)
+        if isCalling {
+            self.callButton?.addTarget(self, action: #selector(self.hangUpPressed), for: .touchUpInside)
+        } else {
+            self.callButton?.addTarget(self, action: #selector(self.callPressed), for: .touchUpInside)
+        }
+    }
+    
     // MARK: - OBJC Methods
     
-    @objc func callButtonPressed() {
+    @objc func callPressed() {
         guard let recipientNumber = self.dialPad?.text else {
             return
         }
         
         self.ziwoClient.call(number: recipientNumber)
+        self.handleButtonCall(isCalling: true)
+    }
+    
+    @objc func hangUpPressed() {
+        self.ziwoClient.hangUp()
     }
 
 }
@@ -119,7 +136,8 @@ extension AgentViewController: ZiwoClientDelegate {
     
     func vertoClientIsReady() {
         print("[Example App - Ziwo Client] Verto client is ready.")
-        self.ziwoClient.vertoDebug = false
+        
+        self.ziwoClient.vertoDebug = true
         self.ziwoClient.domainDebug = false
     }
     
@@ -129,6 +147,8 @@ extension AgentViewController: ZiwoClientDelegate {
     
     func vertoCallEnded() {
         print("[Example App - Ziwo Client] Call has ended.")
+        
+        self.handleButtonCall(isCalling: false)
     }
     
 }

@@ -115,7 +115,23 @@ public class ZiwoClient {
         }
     }
     
-    func findCall(callID: String) -> Call? {
+    public func hangUp(callID: String = "") {
+        guard let socket = self.vertoWebSocket else {
+                return
+        }
+        
+        if callID.isEmpty {
+            guard let call = self.calls.first else {
+                return
+            }
+            
+            socket.hangup(callID: call.callID)
+        } else {
+            socket.hangup(callID: callID)
+        }
+    }
+    
+    public func findCall(callID: String) -> Call? {
         return self.calls.filter({ $0.callID == callID }).first
     }
 }

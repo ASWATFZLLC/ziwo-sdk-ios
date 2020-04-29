@@ -142,7 +142,7 @@ public class VertoWebSocket: ZiwoWebSocket {
         }
     }
     
-    func hangup(callID: String, autoDismiss: Bool) {
+    func hangup(callID: String) {
         guard let socket = self.webSocket, let agentEmail = Defaults[.agentEmail],
             let hangupRPC = VertoHelpers.hangupCall(agent: agentEmail, callID: callID, sessId: self.sessId).rawString() else {
                 return
