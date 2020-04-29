@@ -19,6 +19,7 @@ class AgentViewController: UIViewController {
     
     var dialPad: UITextField?
     var callButton: UIButton?
+    var answerButton: UIButton?
     
     // MARK: - Basic Methods
 
@@ -81,6 +82,14 @@ class AgentViewController: UIViewController {
         self.callButton?.titleLabel?.tintColor = .white
         self.callButton?.setTitle("Call", for: .normal)
         self.view.addSubview(self.callButton!)
+        
+        self.answerButton = UIButton(frame: CGRect(x: 20, y: Frame.below(view: self.callButton, withOffset: 20),
+                                                  width: self.view.frame.width - 40, height: 30))
+        self.answerButton?.addTarget(self, action: #selector(self.answerPressed), for: .touchUpInside)
+        self.answerButton?.backgroundColor = .green
+        self.answerButton?.titleLabel?.tintColor = .white
+        self.answerButton?.isHidden = true
+        self.view.addSubview(self.answerButton!)
     }
     
     func handleButtonCall(isCalling: Bool) {
@@ -106,8 +115,21 @@ class AgentViewController: UIViewController {
         self.handleButtonCall(isCalling: true)
     }
     
+    @objc func answerPressed() {
+        guard let call = self.ziwoClient.calls.first else {
+            return
+        }
+        
+        self.ziwoClient.answerIncomingCall(callID: call.callID)
+        self.handleButtonCall(isCalling: true)
+    }
+    
     @objc func hangUpPressed() {
-        self.ziwoClient.hangUp()
+        guard let call = self.ziwoClient.calls.first else {
+            return
+        }
+        
+        self.ziwoClient.hangUp(callID: call.callID)
     }
 
 }
@@ -143,12 +165,22 @@ extension AgentViewController: ZiwoClientDelegate {
     
     func vertoCallStarted() {
         print("[Example App - Ziwo Client] Call has started.")
+        
+        self.answerButton?.isHidden = true
+    }
+    
+    func vertoReceivedCall(callerID: String) {
+        print("[Example App - Ziwo Client] \(callerID) is calling.")
+        
+        self.answerButton?.isHidden = false
+        self.answerButton?.setTitle("Agent n°\(callerID) is calling...", for: .normal)
     }
     
     func vertoCallEnded() {
         print("[Example App - Ziwo Client] Call has ended.")
         
         self.handleButtonCall(isCalling: false)
+        self.answerButton?.isHidden = true
     }
     
 }

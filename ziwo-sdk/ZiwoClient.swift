@@ -13,6 +13,7 @@ public protocol ZiwoClientDelegate {
     func vertoIsDisconnected()
     func vertoClientIsReady()
     func vertoCallStarted()
+    func vertoReceivedCall(callerID: String)
     func vertoCallEnded()
     
     func domainIsConnected()
@@ -29,7 +30,7 @@ public class ZiwoClient {
     // MARK: - Vars
     
     public var delegate: ZiwoClientDelegate?
-    private var calls: [Call] = []
+    public var calls: [Call] = []
     
     public var vertoDebug: Bool = true {
         willSet(bool) {
@@ -115,20 +116,22 @@ public class ZiwoClient {
         }
     }
     
-    public func hangUp(callID: String = "") {
+    public func hangUp(callID: String) {
         guard let socket = self.vertoWebSocket else {
-                return
+            return
         }
         
-        if callID.isEmpty {
-            guard let call = self.calls.first else {
-                return
-            }
-            
-            socket.hangup(callID: call.callID)
-        } else {
-            socket.hangup(callID: callID)
+        socket.hangup(callID: callID)
+    }
+    
+    public func answerIncomingCall(callID: String) {
+        guard let agentEmail = ZiwoSDK.shared.agent?.email, let socket = self.vertoWebSocket, let call = self.findCall(callID: callID),
+            let sdp = call.rtcClient.peerConnection?.localDescription?.sdp, let callRPC = VertoHelpers.createCallRPC(method: "answer",
+                agent: agentEmail, sdp: sdp, sessId: socket.sessId, callID: callID).rawString() else {
+                    return
         }
+
+        socket.sendCallCreation(callID: callID, callRPC: callRPC)
     }
     
     public func findCall(callID: String) -> Call? {
@@ -167,6 +170,8 @@ extension ZiwoClient: VertoWebSocketDelegate {
         let call = Call(callID: callID, sessID: socket.sessId, callerName: callerName, recipientName: agentCCLogin)
         self.calls.append(call)
         call.rtcClient.setRemoteDescription(type: .offer, sdp: sdp)
+        
+        self.delegate?.vertoReceivedCall(callerID: callerName)
     }
     
     public func vertoCallDisplay() {

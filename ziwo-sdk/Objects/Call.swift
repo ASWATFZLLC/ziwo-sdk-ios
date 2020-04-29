@@ -10,12 +10,12 @@ import Foundation
 
 public class Call {
     
-    let rtcClient = RTCClient.init()
+    internal let rtcClient = RTCClient.init()
     
-    var callID: String = ""
-    var sessID: String = ""
-    var callerName: String = ""
-    var recipientName: String = ""
+    public var callID: String = ""
+    public var sessID: String = ""
+    public var callerName: String = ""
+    public var recipientName: String = ""
     
     public init(callID: String, sessID: String, callerName: String, recipientName: String) {
         self.callID = callID
