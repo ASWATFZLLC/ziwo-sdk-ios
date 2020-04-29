@@ -78,7 +78,7 @@ public class DomainWebSocket: ZiwoWebSocket {
         }
         
         socket.write(string: "2") {
-            print("[Domain WebSocket - Web Socket Delegate] > Send ping ...")
+            self.printLog(message: "[Domain WebSocket - Web Socket Delegate] > Send ping ...")
         }
     }
     

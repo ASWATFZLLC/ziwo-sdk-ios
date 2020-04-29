@@ -35,21 +35,27 @@ class AgentViewController: UIViewController {
     
     func initializeZiwoClient() {
         // MARK: - Initialize domain & verto websockets in viewDidLoad to be sure they're always running.
-        
-        Network.getProfile().done { agent in
-            
-            /** NOTE: - After those steps, the only things missing for the Ziwo SDK initialization are :
-                - Set the current agent
-                - Connect the verto websocket
-                - Connect the domain websocket
-             The two last steps will be implemented in your logged view.
-            */
-            ZiwoSDK.shared.setAgent(agent: agent)
-            
-            self.ziwoClient.initializeClient()
-            self.ziwoClient.domainDebug = false
+
+        Network.autoLogin().done { _ in
+            Network.getProfile().done { agent in
+                
+                /** NOTE: - After those steps, the only things missing for the Ziwo SDK initialization are :
+                    - Set the current agent
+                    - Connect the verto websocket
+                    - Connect the domain websocket
+                 The two last steps will be implemented in your logged view.
+                */
+                ZiwoSDK.shared.setAgent(agent: agent)
+                
+                self.ziwoClient.vertoDebug = false
+                self.ziwoClient.domainDebug = false
+                self.ziwoClient.initializeClient()
+                self.ziwoClient.delegate = self
+            }.catch { error in
+                print("[Example App Login] - Error while trying to fetch agent profile : \(error.localizedDescription)")
+            }
         }.catch { error in
-            print("[Example App Login] - Error while trying to fetch agent profile : \(error.localizedDescription)")
+            print("[Example App Login] - Error while trying to authenticate agent : \(error.localizedDescription)")
         }
     }
     
@@ -87,4 +93,42 @@ class AgentViewController: UIViewController {
         self.ziwoClient.call(number: recipientNumber)
     }
 
+}
+
+extension AgentViewController: ZiwoClientDelegate {
+    
+    // MARK: - Websockets Delegates
+    
+    func vertoIsConnected() {
+        print("[Example App - Ziwo Client] Verto websocket is connected.")
+    }
+    
+    func vertoIsDisconnected() {
+        print("[Example App - Ziwo Client] Verto websocket has been disconnected.")
+    }
+    
+    func domainIsConnected() {
+        print("[Example App - Ziwo Client] Domain websocket has been disconnected.")
+    }
+    
+    func domainIsDisconnected() {
+        print("[Example App - Ziwo Client] Domain websocket has been disconnected.")
+    }
+    
+    // MARK: - Call Delegates
+    
+    func vertoClientIsReady() {
+        print("[Example App - Ziwo Client] Verto client is ready.")
+        self.ziwoClient.vertoDebug = false
+        self.ziwoClient.domainDebug = false
+    }
+    
+    func vertoCallStarted() {
+        print("[Example App - Ziwo Client] Call has started.")
+    }
+    
+    func vertoCallEnded() {
+        print("[Example App - Ziwo Client] Call has ended.")
+    }
+    
 }

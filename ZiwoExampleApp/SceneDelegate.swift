@@ -9,6 +9,7 @@
 import UIKit
 import Defaults
 import ZiwoSDK
+import Permission
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -25,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UIApplication.shared.windows.first?.rootViewController = vc
         UIApplication.shared.windows.first?.makeKeyAndVisible()
         
+        self.askPermission()
+        
         if let accessToken = ZiwoSDK.shared.accessToken {
             if !accessToken.isEmpty {
                 vc.redirectLoggedAgent()
@@ -32,6 +35,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    func askPermission() {
+        Permission.microphone.request { status in
+            switch status {
+            case .denied:
+                print("Warning. You didn't grant an access to the microphone.")
+            default:
+                return
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -11,24 +11,21 @@ import Starscream
 import SwiftyJSON
 import Defaults
 
-protocol VertoWebSocketDelegate {
-    // Websocket related functions
+public protocol VertoWebSocketDelegate {
     func wsVertoConnected()
     func wsVertoDisconnected()
-    
-    // Verto related functions
+    func vertoClientReady()
     func vertoCallStarted(callID: String, sdp: String)
     func vertoAnsweringCall(callID: String, callerName: String, sdp: String)
     func vertoCallDisplay()
-    func vertoCalledEnded(callID: String)
+    func vertoCallEnded(callID: String)
 }
 
 public class VertoWebSocket: ZiwoWebSocket {
     
     private var delegate: VertoWebSocketDelegate?
-    public var sessionID: String = ""
     
-    // MARK: - Initializer
+    var sessId: String = ""
     
     init(url: URL, delegate: VertoWebSocketDelegate) {
         super.init()
@@ -38,8 +35,6 @@ public class VertoWebSocket: ZiwoWebSocket {
         
         self.delegate = delegate
     }
-    
-    // MARK: - WebSocket methods
     
     func connect() {
         guard let socket = self.webSocket else {
@@ -55,7 +50,6 @@ public class VertoWebSocket: ZiwoWebSocket {
         }
         
         socket.disconnect()
-        self.delegate?.wsVertoDisconnected()
     }
     
     // MARK: - Socket Message Parsing
@@ -64,7 +58,7 @@ public class VertoWebSocket: ZiwoWebSocket {
         guard let messageDict = VertoHelpers.convertStringToDictionary(message) else {
             return
         }
-
+        
         if let method = messageDict["method"] as? String, let id = messageDict["id"] as? Int,
             let params = messageDict["params"] as? [String: Any] {
             self.parseVertoEvent(method, id, params)
@@ -80,47 +74,48 @@ public class VertoWebSocket: ZiwoWebSocket {
             return
         }
         
-        self.sessionID = sessId
-        self.printLog(message: "[WebSocket - Socket Message Parsing] > Session ID set : \(sessId)")
+        self.sessId = sessId
+        self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Session ID set : \(sessId)")
     }
     
     func parseVertoEvent(_ method: String, _ id: Int, _ params: [String: Any]) {
         guard let event = VertoEvent(rawValue: method) else {
             return
         }
-
+         
         switch event {
         case .ClientReady:
-            self.printLog(message: "[WebSocket - Socket Message Parsing] > Verto client is ready")
+            self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Client READY ! YAY !")
+            self.delegate?.vertoClientReady()
         case .Media:
-            self.printLog(message: "[WebSocket - Socket Message Parsing] > Call creation succeed")
+            self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Call creation succeed")
             self.sendCallAnswer(id, params as! [String: String])
         case .Invite:
-            self.printLog(message: "[WebSocket - Socket Message Parsing] > Call from outside received")
+            self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Call from outside received")
             self.sendBackInvite(id, params as! [String: String])
         case .Display:
-            self.printLog(message: "[WebSocket - Socket Message Parsing] > Display call")
+            self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Display call")
             self.sendBackDisplay(id)
         case .Bye:
-            self.printLog(message: "[WebSocket - Socket Message Parsing] > Call has ended")
-            self.delegate?.vertoCalledEnded(callID: JSON(params)["callID"].stringValue)
+            self.printLog(message: "[Verto WebSocket - Socket Message Parsing] > Verto Bye")
+            self.delegate?.vertoCallEnded(callID: JSON(params)["callID"].stringValue)
         }
     }
     
     // MARK: - Mod_verto Methods
     
     func sendLoginRequest() {
-        guard let ccLogin = Defaults[.agentCCLogin], let ccPassword = Defaults[.agentCCPassword] else {
+        guard let agentCCLogin = Defaults[.agentCCLogin], let agentCCPassword = Defaults[.agentCCPassword] else {
             return
         }
-
-        let loginRPC = VertoHelpers.getLoginRPC(agentNumber: ccLogin, ccPassword: ccPassword)
+        
+        let loginRPC = VertoHelpers.getLoginRPC(agentNumber: agentCCLogin, ccPassword: agentCCPassword)
         guard let socket = self.webSocket, let rawRPC = loginRPC.rawString() else {
             return
         }
-
+        
         socket.write(string: rawRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > login - json RPC sent : \(rawRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > login - json RPC sent : \(rawRPC)")
         }
     }
     
@@ -128,9 +123,9 @@ public class VertoWebSocket: ZiwoWebSocket {
         guard let socket = self.webSocket else {
             return
         }
-
+        
         socket.write(string: callRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > create call - json RPC sent : \(callRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > create call - json RPC sent : \(callRPC)")
         }
     }
     
@@ -143,20 +138,20 @@ public class VertoWebSocket: ZiwoWebSocket {
         self.delegate?.vertoCallStarted(callID: JSON(params)["callID"].stringValue, sdp: JSON(params)["sdp"].stringValue)
 
         socket.write(string: rawRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > call answer - json RPC sent : \(rawRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > call answer - json RPC sent : \(rawRPC)")
         }
     }
     
     func hangup(callID: String, autoDismiss: Bool) {
         guard let socket = self.webSocket, let agentEmail = Defaults[.agentEmail],
-            let hangupRPC = VertoHelpers.hangupCall(agent: agentEmail, callID: callID, sessId: self.sessionID).rawString() else {
+            let hangupRPC = VertoHelpers.hangupCall(agent: agentEmail, callID: callID, sessId: self.sessId).rawString() else {
                 return
         }
-
-        self.delegate?.vertoCalledEnded(callID: callID)
-
+        
+        self.delegate?.vertoCallEnded(callID: callID)
+        
         socket.write(string: hangupRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > hangup call - json RPC sent : \(hangupRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > hangup call - json RPC sent : \(hangupRPC)")
         }
     }
     
@@ -164,16 +159,16 @@ public class VertoWebSocket: ZiwoWebSocket {
         guard let callIdName = params["caller_id_name"], let callID = params["callID"] else {
             return
         }
-
+        
         let callInvite = VertoHelpers.callAnswer(id: id, method: "invite")
         guard let socket = self.webSocket, let callInviteRPC = callInvite.rawString() else {
             return
         }
-
+        
         self.delegate?.vertoAnsweringCall(callID: callID, callerName: callIdName, sdp: JSON(params)["sdp"].stringValue)
-
+        
         socket.write(string: callInviteRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > send back call invite - json RPC sent : \(callInviteRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > send back call invite - json RPC sent : \(callInviteRPC)")
         }
     }
     
@@ -182,17 +177,47 @@ public class VertoWebSocket: ZiwoWebSocket {
         guard let socket = self.webSocket, let callDisplayRPC = callDisplay.rawString() else {
             return
         }
-
+        
         self.delegate?.vertoCallDisplay()
         
         socket.write(string: callDisplayRPC) {
-            self.printLog(message: "[WebSocket - mod_verto] > send back call display - json RPC sent : \(callDisplayRPC)")
+            self.printLog(message: "[Verto WebSocket - mod_verto] > send back call display - json RPC sent : \(callDisplayRPC)")
+        }
+    }
+    
+    func sendHoldAction(callID: String, _ isOn: Bool) {
+        guard let agentEmail = Defaults[.agentEmail], let socket = self.webSocket,
+            let callRPC = VertoHelpers.createHoldAction(agent: agentEmail, sessId: self.sessId, callID: callID, isOn: isOn).rawString() else {
+                return
+        }
+        
+        socket.write(string: callRPC) {
+            self.printLog(message: "[Verto WebSocket - mod_verto] > send hold action - json RPC sent : \(callRPC)")
+        }
+    }
+    
+    func sendDigit(callID: String, number: String) {
+        guard let agentEmail = Defaults[.agentEmail], let socket = self.webSocket, let callRPC = VertoHelpers.sendDigit(agent: agentEmail, sessId: self.sessId, callID: callID, number: number).rawString() else {
+                return
+        }
+        
+        socket.write(string: callRPC) {
+            self.printLog(message: "[Verto WebSocket - mod_verto] > send digit - json RPC sent : \(callRPC)")
+        }
+    }
+    
+    func blindTransfer(callID: String, number: String) {
+        guard let email = Defaults[.agentEmail], let socket = self.webSocket,
+            let callRPC = VertoHelpers.blindTransfer(agent: email, sessId: self.sessId, callID: callID, number: number).rawString() else {
+                return
+        }
+        
+        socket.write(string: callRPC) {
+            self.printLog(message: "[Verto WebSocket - mod_verto] > send blind transfer - json RPC sent : \(callRPC)")
         }
     }
     
 }
-
-// MARK: - Verto Web Socket Delegate
 
 extension VertoWebSocket: WebSocketDelegate {
     
@@ -214,3 +239,4 @@ extension VertoWebSocket: WebSocketDelegate {
     }
     
 }
+

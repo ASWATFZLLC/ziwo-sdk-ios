@@ -21,6 +21,7 @@ target 'ZiwoExampleApp' do
     # Pods for ZiwoExampleApp
     pod 'ZiwoSDK', :path => '.'
     pod 'Alamofire'
+    pod 'Permission/Microphone'
 end
 
 target 'ziwo_sdkTests' do

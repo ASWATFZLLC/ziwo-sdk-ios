@@ -107,11 +107,7 @@ class LoginViewController: UIViewController {
             // NOTE: - At that point you should get an access token, set it so the SDK can connect the domain websocket later.
             ZiwoSDK.shared.accessToken = accessToken
             
-            Network.autoLogin().done { _ in
-                self.redirectLoggedAgent()
-            }.catch { error in
-                print("[Example App Login] - Error while trying to authenticate agent : \(error.localizedDescription)")
-            }
+            self.redirectLoggedAgent()
         }.catch { error in
             print("[Example App Login] - Error while trying to login agent : \(error.localizedDescription)")
         }

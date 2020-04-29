@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol ZiwoClientDelegate {
+public protocol ZiwoClientDelegate {
     func vertoIsConnected()
     func vertoIsDisconnected()
+    func vertoClientIsReady()
+    func vertoCallStarted()
     func vertoCallEnded()
     
     func domainIsConnected()
@@ -26,7 +28,8 @@ public class ZiwoClient {
     
     // MARK: - Vars
     
-    var delegate: ZiwoClientDelegate?
+    public var delegate: ZiwoClientDelegate?
+    private var calls: [Call] = []
     
     public var vertoDebug: Bool = true {
         willSet(bool) {
@@ -92,51 +95,75 @@ public class ZiwoClient {
                 return
         }
         
-        let call = Call(callID: UUID().uuidString.lowercased(), sessID: vertoWS.sessionID,
+        let call = Call(callID: UUID().uuidString.lowercased(), sessID: vertoWS.sessId,
                         callerName: ccLogin, recipientName: number)
+        self.calls.append(call)
 
         call.rtcClient.createOffer().done { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 VertoHelpers.REMOTE_NUMBER = number
 
                 guard let peerConnection = call.rtcClient.peerConnection, let sdp = peerConnection.localDescription?.sdp,
-                    let callRPC = VertoHelpers.createCallRPC(method: "invite", agent: agentEmail, sdp: sdp,
-                                                             sessId: vertoWS.sessionID, callID: call.callID).rawString() else {
+                    let callRPC = VertoHelpers.createCallRPC(method: "invite", agent: agentEmail, sdp: sdp, sessId: vertoWS.sessId, callID: call.callID).rawString() else {
                     return
                 }
 
                 vertoWS.sendCallCreation(callID: call.callID, callRPC: callRPC)
             }
         }.catch { error in
-            print("[DialPadController - Call Processing] - Error occured while creating offer : \(error.localizedDescription)")
+            print("[Ziwo SDK - Call] - Error occured while creating offer : \(error.localizedDescription)")
         }
+    }
+    
+    func findCall(callID: String) -> Call? {
+        return self.calls.filter({ $0.callID == callID }).first
     }
 }
 
 
 extension ZiwoClient: VertoWebSocketDelegate {
     
-    func vertoCallStarted(callID: String, sdp: String) {
-        
-    }
-    
-    func vertoAnsweringCall(callID: String, callerName: String, sdp: String) {
-        
-    }
-    
-    func vertoCallDisplay() {
-        
-    }
-    
-    func wsVertoConnected() {
+    public func wsVertoConnected() {
         self.delegate?.vertoIsConnected()
     }
     
-    func wsVertoDisconnected() {
+    public func wsVertoDisconnected() {
         self.delegate?.vertoIsDisconnected()
     }
     
-    func vertoCalledEnded(callID: String) {
+    public func vertoClientReady() {
+        self.delegate?.vertoClientIsReady()
+    }
+    
+    public func vertoCallStarted(callID: String, sdp: String) {
+        guard let call = self.findCall(callID: callID) else {
+            return
+        }
+        
+        call.rtcClient.setRemoteDescription(type: .answer, sdp: sdp)
+    }
+    
+    public func vertoAnsweringCall(callID: String, callerName: String, sdp: String) {
+        guard let socket = self.vertoWebSocket, let agentCCLogin = ZiwoSDK.shared.agent?.ccLogin else {
+            return
+        }
+        
+        let call = Call(callID: callID, sessID: socket.sessId, callerName: callerName, recipientName: agentCCLogin)
+        self.calls.append(call)
+        call.rtcClient.setRemoteDescription(type: .offer, sdp: sdp)
+    }
+    
+    public func vertoCallDisplay() {
+        self.delegate?.vertoCallStarted()
+    }
+    
+    public func vertoCallEnded(callID: String) {
+        guard let call = self.findCall(callID: callID) else {
+            return
+        }
+
+        call.rtcClient.closeConnection()
+        self.calls.removeAll(where: {$0.callID == callID})
         self.delegate?.vertoCallEnded()
     }
     
