@@ -88,7 +88,7 @@ public class ZiwoClient {
         }
     }
     
-    // MARK: - Client Methods
+    // MARK: - Client Call Methods
     
     public func call(number: String) {
         guard let vertoWS = self.vertoWebSocket, let ccLogin = ZiwoSDK.shared.agent?.ccLogin,
@@ -132,6 +132,61 @@ public class ZiwoClient {
         }
 
         socket.sendCallCreation(callID: callID, callRPC: callRPC)
+    }
+    
+    // MARK: - In-Call Methods
+    
+    public func setSpeakerEnabled(callID: String, _ value: Bool) {
+        guard let call = self.findCall(callID: callID) else {
+            return
+        }
+        
+        call.speakerState = value
+        value ? call.setSpeakerOn() : call.setSpeakerOff()
+    }
+    
+    public func setMuteEnabled(callID: String, _ value: Bool) {
+        guard let call = self.findCall(callID: callID) else {
+            return
+        }
+        
+        call.isMuted = value
+        call.setMicrophoneEnabled(!value)
+    }
+    
+    public func setPauseEnabled(callID: String, _ value: Bool) {
+        guard let socket = self.vertoWebSocket, let call = self.findCall(callID: callID) else {
+            return
+        }
+        
+        call.isPaused = value
+        socket.sendHoldAction(callID: callID, value)
+    }
+    
+    // MARK: - Client Utils Methods
+    
+    public func isSpeakerOn(callID: String) -> Bool {
+        guard let call = self.findCall(callID: callID) else {
+            return false
+        }
+        
+        return call.speakerState
+    }
+    
+    public func isPaused(callID: String) -> Bool {
+        guard let call = self.findCall(callID: callID) else {
+            return false
+        }
+        
+        return call.isPaused
+    }
+    
+    public func isMuteOn(callID: String) -> Bool {
+        guard let call = self.findCall(callID: callID) else {
+            return false
+        }
+        
+        return call.isMuted
     }
     
     public func findCall(callID: String) -> Call? {

@@ -20,6 +20,9 @@ class AgentViewController: UIViewController {
     var dialPad: UITextField?
     var callButton: UIButton?
     var answerButton: UIButton?
+    var speakerButton: UIButton?
+    var muteButton: UIButton?
+    var pauseButton: UIButton?
     
     // MARK: - Basic Methods
 
@@ -90,6 +93,33 @@ class AgentViewController: UIViewController {
         self.answerButton?.titleLabel?.tintColor = .white
         self.answerButton?.isHidden = true
         self.view.addSubview(self.answerButton!)
+        
+        self.speakerButton = UIButton(frame: CGRect(x: 20, y: Frame.below(view: self.answerButton, withOffset: 20),
+                                                  width: self.view.frame.width - 40, height: 30))
+        self.speakerButton?.addTarget(self, action: #selector(self.speakerPressed), for: .touchUpInside)
+        self.speakerButton?.setTitle("Set speaker ON", for: .normal)
+        self.speakerButton?.backgroundColor = .green
+        self.speakerButton?.titleLabel?.tintColor = .white
+        self.speakerButton?.isHidden = true
+        self.view.addSubview(self.speakerButton!)
+        
+        self.muteButton = UIButton(frame: CGRect(x: 20, y: Frame.below(view: self.speakerButton, withOffset: 20),
+                                                  width: self.view.frame.width - 40, height: 30))
+        self.muteButton?.addTarget(self, action: #selector(self.mutePressed), for: .touchUpInside)
+        self.muteButton?.setTitle("Mute microphone", for: .normal)
+        self.muteButton?.backgroundColor = .green
+        self.muteButton?.titleLabel?.tintColor = .white
+        self.muteButton?.isHidden = true
+        self.view.addSubview(self.muteButton!)
+        
+        self.pauseButton = UIButton(frame: CGRect(x: 20, y: Frame.below(view: self.muteButton, withOffset: 20),
+                                                  width: self.view.frame.width - 40, height: 30))
+        self.pauseButton?.addTarget(self, action: #selector(self.pausePressed), for: .touchUpInside)
+        self.pauseButton?.setTitle("Hold call", for: .normal)
+        self.pauseButton?.backgroundColor = .green
+        self.pauseButton?.titleLabel?.tintColor = .white
+        self.pauseButton?.isHidden = true
+        self.view.addSubview(self.pauseButton!)
     }
     
     func handleButtonCall(isCalling: Bool) {
@@ -106,6 +136,48 @@ class AgentViewController: UIViewController {
     
     // MARK: - OBJC Methods
     
+    @objc func mutePressed() {
+        guard let call = self.ziwoClient.calls.first else {
+            return
+        }
+        
+        if self.ziwoClient.isMuteOn(callID: call.callID) {
+            self.ziwoClient.setMuteEnabled(callID: call.callID, false)
+            self.muteButton?.setTitle("Mute microphone", for: .normal)
+        } else {
+            self.ziwoClient.setMuteEnabled(callID: call.callID, true)
+            self.muteButton?.setTitle("Unmute microphone", for: .normal)
+        }
+    }
+    
+    @objc func speakerPressed() {
+        guard let call = self.ziwoClient.calls.first else {
+            return
+        }
+        
+        if self.ziwoClient.isSpeakerOn(callID: call.callID) {
+            self.ziwoClient.setSpeakerEnabled(callID: call.callID, false)
+            self.speakerButton?.setTitle("Set speaker ON", for: .normal)
+        } else {
+            self.ziwoClient.setSpeakerEnabled(callID: call.callID, true)
+            self.speakerButton?.setTitle("Set speaker OFF", for: .normal)
+        }
+    }
+    
+    @objc func pausePressed() {
+        guard let call = self.ziwoClient.calls.first else {
+            return
+        }
+        
+        if self.ziwoClient.isPaused(callID: call.callID) {
+            self.ziwoClient.setPauseEnabled(callID: call.callID, false)
+            self.pauseButton?.setTitle("Hold call", for: .normal)
+        } else {
+            self.ziwoClient.setPauseEnabled(callID: call.callID, true)
+            self.pauseButton?.setTitle("Unhold call", for: .normal)
+        }
+    }
+    
     @objc func callPressed() {
         guard let recipientNumber = self.dialPad?.text else {
             return
@@ -113,6 +185,7 @@ class AgentViewController: UIViewController {
         
         self.ziwoClient.call(number: recipientNumber)
         self.handleButtonCall(isCalling: true)
+        self.dialPad?.resignFirstResponder()
     }
     
     @objc func answerPressed() {
@@ -167,6 +240,9 @@ extension AgentViewController: ZiwoClientDelegate {
         print("[Example App - Ziwo Client] Call has started.")
         
         self.answerButton?.isHidden = true
+        self.pauseButton?.isHidden = false
+        self.muteButton?.isHidden = false
+        self.speakerButton?.isHidden = false
     }
     
     func vertoReceivedCall(callerID: String) {
@@ -181,6 +257,9 @@ extension AgentViewController: ZiwoClientDelegate {
         
         self.handleButtonCall(isCalling: false)
         self.answerButton?.isHidden = true
+        self.pauseButton?.isHidden = true
+        self.muteButton?.isHidden = true
+        self.speakerButton?.isHidden = true
     }
     
 }

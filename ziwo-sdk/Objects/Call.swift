@@ -11,6 +11,9 @@ import Foundation
 public class Call {
     
     internal let rtcClient = RTCClient.init()
+    internal var speakerState: Bool = false
+    internal var isPaused: Bool = false
+    internal var isMuted: Bool = false
     
     public var callID: String = ""
     public var sessID: String = ""
@@ -22,5 +25,17 @@ public class Call {
         self.sessID = sessID
         self.callerName = callerName
         self.recipientName = recipientName
+    }
+    
+    public func setMicrophoneEnabled(_ value: Bool) {
+        self.rtcClient.setMicrophoneEnabled(value)
+    }
+    
+    public func setSpeakerOn() {
+        self.rtcClient.speakerOn()
+    }
+    
+    public func setSpeakerOff() {
+        self.rtcClient.speakerOff()
     }
 }
