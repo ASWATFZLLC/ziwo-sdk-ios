@@ -105,7 +105,7 @@ public class ZiwoClient {
                 VertoHelpers.REMOTE_NUMBER = number
 
                 guard let peerConnection = call.rtcClient.peerConnection, let sdp = peerConnection.localDescription?.sdp,
-                    let callRPC = VertoHelpers.createCallRPC(method: "invite", agent: agentEmail, sdp: sdp, sessId: vertoWS.sessId, callID: call.callID).rawString() else {
+                    let callRPC = VertoHelpers.createCallRPC(method: "invite", agentEmail: agentEmail, sdp: sdp, sessId: vertoWS.sessId, callID: call.callID).rawString() else {
                     return
                 }
 
@@ -127,7 +127,7 @@ public class ZiwoClient {
     public func answerIncomingCall(callID: String) {
         guard let agentEmail = ZiwoSDK.shared.agent?.email, let socket = self.vertoWebSocket, let call = self.findCall(callID: callID),
             let sdp = call.rtcClient.peerConnection?.localDescription?.sdp, let callRPC = VertoHelpers.createCallRPC(method: "answer",
-                agent: agentEmail, sdp: sdp, sessId: socket.sessId, callID: callID).rawString() else {
+                agentEmail: agentEmail, sdp: sdp, sessId: socket.sessId, callID: callID).rawString() else {
                     return
         }
 

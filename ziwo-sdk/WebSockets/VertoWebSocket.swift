@@ -109,7 +109,7 @@ public class VertoWebSocket: ZiwoWebSocket {
             return
         }
         
-        let loginRPC = VertoHelpers.getLoginRPC(agentNumber: agentCCLogin, ccPassword: agentCCPassword)
+        let loginRPC = VertoHelpers.getLoginRPC(ccLogin: agentCCLogin, ccPassword: agentCCPassword)
         guard let socket = self.webSocket, let rawRPC = loginRPC.rawString() else {
             return
         }
@@ -144,7 +144,7 @@ public class VertoWebSocket: ZiwoWebSocket {
     
     func hangup(callID: String) {
         guard let socket = self.webSocket, let agentEmail = Defaults[.agentEmail],
-            let hangupRPC = VertoHelpers.hangupCall(agent: agentEmail, callID: callID, sessId: self.sessId).rawString() else {
+            let hangupRPC = VertoHelpers.hangupCall(agentEmail: agentEmail, callID: callID, sessId: self.sessId).rawString() else {
                 return
         }
         
@@ -187,7 +187,7 @@ public class VertoWebSocket: ZiwoWebSocket {
     
     func sendHoldAction(callID: String, _ isOn: Bool) {
         guard let agentEmail = Defaults[.agentEmail], let socket = self.webSocket,
-            let callRPC = VertoHelpers.createHoldAction(agent: agentEmail, sessId: self.sessId, callID: callID, isOn: isOn).rawString() else {
+            let callRPC = VertoHelpers.createHoldAction(agentEmail: agentEmail, sessId: self.sessId, callID: callID, isOn: isOn).rawString() else {
                 return
         }
         
@@ -197,7 +197,7 @@ public class VertoWebSocket: ZiwoWebSocket {
     }
     
     func sendDigit(callID: String, number: String) {
-        guard let agentEmail = Defaults[.agentEmail], let socket = self.webSocket, let callRPC = VertoHelpers.sendDigit(agent: agentEmail, sessId: self.sessId, callID: callID, number: number).rawString() else {
+        guard let agentEmail = Defaults[.agentEmail], let socket = self.webSocket, let callRPC = VertoHelpers.sendDigit(agentEmail: agentEmail, sessId: self.sessId, callID: callID, number: number).rawString() else {
                 return
         }
         
@@ -208,7 +208,7 @@ public class VertoWebSocket: ZiwoWebSocket {
     
     func blindTransfer(callID: String, number: String) {
         guard let email = Defaults[.agentEmail], let socket = self.webSocket,
-            let callRPC = VertoHelpers.blindTransfer(agent: email, sessId: self.sessId, callID: callID, number: number).rawString() else {
+            let callRPC = VertoHelpers.blindTransfer(agentEmail: email, sessId: self.sessId, callID: callID, number: number).rawString() else {
                 return
         }
         
