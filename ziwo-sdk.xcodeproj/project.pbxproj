@@ -865,7 +865,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZiwoExampleApp/ZiwoExampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = "$(inherited)";
 				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -887,7 +887,7 @@
 				CODE_SIGN_ENTITLEMENTS = ZiwoExampleApp/ZiwoExampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGYSA26NZC;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = "$(inherited)";
 				INFOPLIST_FILE = ZiwoExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (

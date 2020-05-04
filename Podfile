@@ -2,8 +2,9 @@
 platform :ios, '13.0'
 workspace 'ziwo-sdk.xcworkspace'
 
+use_frameworks!
+
 target 'ziwo-sdk' do
-    use_frameworks!
     project './ziwo-sdk.xcodeproj'
 
     # Pods for ziwo-sdk
@@ -15,7 +16,6 @@ target 'ziwo-sdk' do
 end
 
 target 'ZiwoExampleApp' do
-    use_frameworks!
     project './ziwo-sdk.xcodeproj'
 
     # Pods for ZiwoExampleApp
@@ -25,5 +25,12 @@ target 'ZiwoExampleApp' do
 end
 
 target 'ziwo_sdkTests' do
-    use_frameworks!
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
 end

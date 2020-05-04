@@ -19,4 +19,5 @@ Pod::Spec.new do |s|
   s.dependency 'Defaults'
   s.dependency 'GoogleWebRTC'
   s.dependency 'PromiseKit'
+  s.xcconfig = {'ENABLE_BITCODE' => 'NO'}
 end
