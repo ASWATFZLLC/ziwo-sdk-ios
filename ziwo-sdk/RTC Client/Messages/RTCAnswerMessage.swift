@@ -8,26 +8,44 @@
 
 import Foundation
 
+/**
+ Type used to handle RTC Candidates received by GoogleRTC external lib.
+*/
 struct RTCAnswerMessage {
+    /// Type of the message
     let type: RTCMessageType = .answer
+    /// SDP of the message
     let sdp: String
 }
 
 extension RTCAnswerMessage: RTCMessageBuilderProtocol {
-    func buildMessage() -> RTCMessage {
+    
+    /**
+     Format a RTC payload into a RTC Answer Message given to informations.
+     
+     - Returns: A RTC Message with `.Answer` type.
+    */
+    func parsePayload() -> RTCMessage {
         var payload: [String: Any] = [String: Any]()
-        payload["type"] = type.rawValue
-        payload["sdp"] = sdp
+        
+        payload["type"] = self.type.rawValue
+        payload["sdp"] = self.sdp
+        
         return RTCMessage(payload: payload)
     }
 }
 
 extension RTCAnswerMessage: RTCMessageParserProtocol {
-    typealias RTCSpecificMessage = RTCAnswerMessage
     
+    /**
+     Parse Swift dictionnary `[String: Any]` to instantiate a RTC Answer Message.
+     
+     - Returns: A RTC Answer Message.
+    */
     static func parse(payload: [String : Any]) -> RTCAnswerMessage? {
+        
         guard let payloadSDP = payload["sdp"] as? String else {
-            print("No sdp inside answer message")
+            print("[RTCClient - RTC Peer Connection Delegate] > Unable to find SDP in payload")
             return nil
         }
         

@@ -12,13 +12,18 @@ import Defaults
 import CommonCrypto
 
 /**
- Verto methods that are used during a call.
+ Verto methods that are used during a call. To understand WebRTC negociation through SDP, please check [this website](https://tools.ietf.org/id/draft-ietf-rtcweb-sdp-08.html).
  */
 enum VertoEvent: String {
+    /// Triggered when the Verto client has been initialized with `(VertoWebSocket).sendLoginRequest()`.
     case ClientReady = "verto.clientReady"
+    /// Triggered Verto is ready to connect the call. The payload contain a `SDP` and the `callID`.
     case Media = "verto.media"
+    /// Triggered when the call has been successfully created.
     case Invite = "verto.invite"
+    /// Triggered when the agent receive a call.
     case Display = "verto.display"
+    /// Triggered when the call has been terminated.
     case Bye = "verto.bye"
 }
 
@@ -46,7 +51,6 @@ class VertoHelpers {
         }
         return hash.map { String(format: "%02x", $0) }.joined()
     }
-    
     
     /**
     Generic method that convert a string into a swift dictionary. This helps to parse messages from the Verto websocket.
@@ -145,7 +149,6 @@ class VertoHelpers {
             "id": 4
         ])
     }
-    
     
     /**
     Format a RPC-JSON to hold or unhold a call.
