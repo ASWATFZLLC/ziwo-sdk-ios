@@ -13,7 +13,6 @@
 		EB1FE80724504E4E00830845 /* ziwo_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1FE80524504E4E00830845 /* ziwo_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D812451B4DB004B7CEB /* ZiwoWebSocket.swift */; };
 		EB549D842451B4F7004B7CEB /* VertoWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D832451B4F7004B7CEB /* VertoWebSocket.swift */; };
-		EB549D862451B515004B7CEB /* DomainWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D852451B515004B7CEB /* DomainWebSocket.swift */; };
 		EB549D8A2451BB1A004B7CEB /* VertoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D892451BB1A004B7CEB /* VertoHelpers.swift */; };
 		EB549D8D2451C11A004B7CEB /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D8C2451C11A004B7CEB /* DefaultKeys.swift */; };
 		EB549D912452DDC5004B7CEB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB549D902452DDC5004B7CEB /* Utils.swift */; };
@@ -88,7 +87,6 @@
 		EB43D5D02459A33F008450A0 /* ZiwoExampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZiwoExampleApp.entitlements; sourceTree = "<group>"; };
 		EB549D812451B4DB004B7CEB /* ZiwoWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZiwoWebSocket.swift; sourceTree = "<group>"; };
 		EB549D832451B4F7004B7CEB /* VertoWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertoWebSocket.swift; sourceTree = "<group>"; };
-		EB549D852451B515004B7CEB /* DomainWebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainWebSocket.swift; sourceTree = "<group>"; };
 		EB549D892451BB1A004B7CEB /* VertoHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertoHelpers.swift; sourceTree = "<group>"; };
 		EB549D8C2451C11A004B7CEB /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		EB549D902452DDC5004B7CEB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 			children = (
 				EB549D812451B4DB004B7CEB /* ZiwoWebSocket.swift */,
 				EB549D832451B4F7004B7CEB /* VertoWebSocket.swift */,
-				EB549D852451B515004B7CEB /* DomainWebSocket.swift */,
 			);
 			path = WebSockets;
 			sourceTree = "<group>";
@@ -569,7 +566,6 @@
 				EB549D822451B4DB004B7CEB /* ZiwoWebSocket.swift in Sources */,
 				EBB6449A24504EF30077D2DF /* ZiwoSDK.swift in Sources */,
 				EB989DEB24532716003D895B /* RTCAnswerMessage.swift in Sources */,
-				EB549D862451B515004B7CEB /* DomainWebSocket.swift in Sources */,
 				EB989DEF245327E8003D895B /* RTCClient.swift in Sources */,
 				EB549D8D2451C11A004B7CEB /* DefaultKeys.swift in Sources */,
 			);

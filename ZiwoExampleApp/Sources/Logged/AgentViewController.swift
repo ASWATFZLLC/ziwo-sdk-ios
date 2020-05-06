@@ -52,7 +52,6 @@ class AgentViewController: UIViewController {
                 ZiwoSDK.shared.setAgent(agent: agent)
                 
                 self.ziwoClient.vertoDebug = false
-                self.ziwoClient.domainDebug = false
                 self.ziwoClient.initializeClient()
                 self.ziwoClient.delegate = self
             }.catch { error in
@@ -233,7 +232,6 @@ extension AgentViewController: ZiwoClientDelegate {
         print("[Example App - Ziwo Client] Verto client is ready.")
         
         self.ziwoClient.vertoDebug = true
-        self.ziwoClient.domainDebug = false
     }
     
     func vertoCallStarted() {

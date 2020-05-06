@@ -17,18 +17,13 @@ public protocol ZiwoClientDelegate {
     func vertoCallStarted()
     func vertoReceivedCall(callerID: String)
     func vertoCallEnded()
-    
-    // MARK: - Domain Related
-    func domainIsConnected()
-    func domainIsDisconnected()
 }
 
 public class ZiwoClient {
     
-    // MARK: - Web Sockets
+    // MARK: - Verto Web Socket
     
     public var vertoWebSocket: VertoWebSocket?
-    public var domainWebSocket: DomainWebSocket?
     
     // MARK: - Vars
     
@@ -45,23 +40,12 @@ public class ZiwoClient {
         }
     }
     
-    public var domainDebug: Bool = true {
-        willSet(bool) {
-            guard let domainWS = self.domainWebSocket else {
-                return
-            }
-            
-            domainWS.debug = bool
-        }
-    }
-    
     // MARK: - Initialization Methods
     
     public init() { }
     
     public func initializeClient() {
         self.initializeVertoWebSocket()
-        self.initializeDomainWebSocket()
     }
     
     private func initializeVertoWebSocket() {
@@ -74,20 +58,6 @@ public class ZiwoClient {
             let vertoSocketUrl = URL(string: "wss://\(domain)-api.aswat.co:8082/") {
             self.vertoWebSocket = VertoWebSocket(url: vertoSocketUrl, delegate: self)
             self.vertoWebSocket?.connect()
-        }
-    }
-    
-    private func initializeDomainWebSocket() {
-        if self.domainWebSocket != nil {
-            self.domainWebSocket?.disconnect()
-            self.domainWebSocket = nil
-        }
-        
-        if let domain = ZiwoSDK.shared.domain, let accessToken = ZiwoSDK.shared.accessToken {
-            if let domainSocketUrl = URL(string: "wss://\(domain)-api.aswat.co/socket/?access_token=\(accessToken)&EIO=3&transport=websocket") {
-                self.domainWebSocket = DomainWebSocket(url: domainSocketUrl, delegate: self)
-                self.domainWebSocket?.connect()
-            }
         }
     }
     
@@ -200,6 +170,8 @@ public class ZiwoClient {
 
 extension ZiwoClient: VertoWebSocketDelegate {
     
+    // MARK: - Verto Web Socket Related
+    
     public func wsVertoConnected() {
         self.delegate?.vertoIsConnected()
     }
@@ -207,6 +179,8 @@ extension ZiwoClient: VertoWebSocketDelegate {
     public func wsVertoDisconnected() {
         self.delegate?.vertoIsDisconnected()
     }
+    
+    // MARK: - Verto Protocol Related
     
     public func vertoClientReady() {
         self.delegate?.vertoClientIsReady()
@@ -244,18 +218,6 @@ extension ZiwoClient: VertoWebSocketDelegate {
         call.rtcClient.closeConnection()
         self.calls.removeAll(where: {$0.callID == callID})
         self.delegate?.vertoCallEnded()
-    }
-    
-}
-
-extension ZiwoClient: DomainWebSocketDelegate {
-    
-    func wsDomainConnected() {
-        self.delegate?.domainIsConnected()
-    }
-    
-    func wsDomainDisconnected() {
-        self.delegate?.domainIsDisconnected()
     }
     
 }
