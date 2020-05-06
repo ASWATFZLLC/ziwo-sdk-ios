@@ -250,12 +250,23 @@ class RTCClient: NSObject {
     
 }
 
+// MARK: - RTC Client Delegates
+
 extension RTCClient: RTCClientDelegate {
     
+    /**
+     Logs message whenever the RTC Client receive or send a message.
+     
+     - Parameters:
+        - message: Message received
+     */
     func logMessage(_ message: RTCMessage) {
         print("[RTCClient - RTC Client Delegate] > RTCClient received a message ... : \(message)")
     }
     
+    /**
+     Triggered when the connection is terminated.
+    */
     func closeConnection() {
         guard let peerConnection = self.peerConnection else {
             return
@@ -267,6 +278,12 @@ extension RTCClient: RTCClientDelegate {
     
 }
 
+// MARK: - RTC Peer Connection Delegates
+
+/**
+ Delegates thats are being triggered during the process of communication between an offer and an answer.
+ It also handle the addition of streams and candidate. Please see GoogleWebRTC resources for more informations.
+*/
 extension RTCClient: RTCPeerConnectionDelegate {
     
     public func peerConnection(_ peerConnection: RTCPeerConnection, didAdd stream: RTCMediaStream) {
