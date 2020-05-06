@@ -8,218 +8,85 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 16,
-      "symbol": "Agent.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 17,
-      "symbol": "Agent.email",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 18,
-      "symbol": "Agent.firstName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 19,
-      "symbol": "Agent.lastName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 20,
-      "symbol": "Agent.ccPassword",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Agent.swift",
-      "line": 21,
-      "symbol": "Agent.ccLogin",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 16,
-      "symbol": "Call.rtcClient",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 17,
-      "symbol": "Call.speakerState",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 18,
-      "symbol": "Call.isPaused",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 19,
-      "symbol": "Call.isMuted",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 21,
-      "symbol": "Call.callID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 22,
-      "symbol": "Call.sessID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 23,
-      "symbol": "Call.callerName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/Objects/Call.swift",
-      "line": 24,
-      "symbol": "Call.recipientName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 39,
-      "symbol": "RTCClient.stunServerURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 41,
-      "symbol": "RTCClient.mediaConstraints",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 42,
-      "symbol": "RTCClient.peerConnection",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 43,
-      "symbol": "RTCClient.connectionFactory",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 44,
-      "symbol": "RTCClient.audioLocalStream",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 46,
+      "line": 51,
       "symbol": "RTCClient.audioQueue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 47,
+      "line": 52,
       "symbol": "RTCClient.rtcAudioSession",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 48,
+      "line": 53,
       "symbol": "RTCClient.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 292,
+      "line": 297,
       "symbol": "RTCClient.peerConnection(_:didAdd:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 296,
+      "line": 301,
       "symbol": "RTCClient.peerConnection(_:didGenerate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 302,
+      "line": 307,
       "symbol": "RTCClient.peerConnection(_:didRemove:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 306,
+      "line": 311,
       "symbol": "RTCClient.peerConnectionShouldNegotiate(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 310,
+      "line": 315,
       "symbol": "RTCClient.peerConnection(_:didChange:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 314,
+      "line": 319,
       "symbol": "RTCClient.peerConnection(_:didChange:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 318,
+      "line": 323,
       "symbol": "RTCClient.peerConnection(_:didRemove:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 322,
+      "line": 327,
       "symbol": "RTCClient.peerConnection(_:didChange:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/emilien/dev/pro/ziwo-sdk-ios/ziwo-sdk/RTC Client/RTCClient.swift",
-      "line": 326,
+      "line": 331,
       "symbol": "RTCClient.peerConnection(_:didOpen:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

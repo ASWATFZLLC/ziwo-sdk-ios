@@ -126,7 +126,74 @@
         <section>
           <section class="section">
             
-            <h1 id='ziwo-sdk-ios' class='heading'>ziwo-sdk-ios</h1>
+            <h1 id='ziwo-sdk' class='heading'>Ziwo SDK</h1>
+
+<p>Our team built a SDK that provides an easy way to integrate Ziwo calls to your iOS app. Written in <strong>Swift 5</strong>, joining <strong>WebSockets</strong>, <strong><a href="https://evoluxbr.github.io/verto-docs/">Verto protocol</a></strong> and <strong><a href="https://webrtc.org/">GoogleRTC</a></strong>, this SDK embed some of the basic features detailed below.</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>[x] Verto authentication</li>
+<li>[x] Call agent or external number</li>
+<li>[x] Receive call from agent or external number</li>
+<li>[x] Mute microphone during a call</li>
+<li>[x] Set audio source to speaker during a call</li>
+<li>[x] Hold / Unhold a ongoing call</li>
+</ul>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 10.0+</li>
+<li>Xcode 11+</li>
+<li>Swift 5.1+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>Use <a href="https://guides.cocoapods.org/using/getting-started.html">Cocoapods</a> to add the SDK to your app.</p>
+<pre class="highlight shell"><code>pod <span class="s1">'ZiwoSDK'</span>
+</code></pre>
+<h2 id='initialization' class='heading'>Initialization</h2>
+
+<p>For further informations about the implementation, you can check the <a href="https://github.com/KalvadTech/ziwo-sdk-ios/tree/master/ZiwoExampleApp">example app available</a>.</p>
+
+<p>In order to setup Verto protocol, please the following steps.</p>
+
+<ol>
+<li><strong>Set the domain</strong>.</li>
+</ol>
+<pre class="highlight swift"><code><span class="kt">ZiwoSDK</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="s">"test-domain.aswat.co"</span>
+</code></pre>
+
+<ol>
+<li>Once the agent is logged on Ziwo (<code>.POST /auth/login</code>), <strong>set the access token</strong> returned by the request.</li>
+</ol>
+<pre class="highlight swift"><code><span class="kt">ZiwoSDK</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">accessToken</span> <span class="o">=</span> <span class="n">accessToken</span>
+</code></pre>
+
+<ol>
+<li><p>Notify Ziwo that the agent is connected and available (<code>.POST /agents/autoLogin</code>).</p></li>
+<li><p>Whenever you get the agent datas (<code>.GET /profile</code>), <strong>set the logged agent</strong>.</p></li>
+</ol>
+<pre class="highlight swift"><code><span class="kt">ZiwoSDK</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">setAgent</span><span class="p">(</span><span class="nv">agent</span><span class="p">:</span> <span class="n">agent</span><span class="p">)</span>
+</code></pre>
+
+<ol>
+<li>Finally, <strong>initialize the Ziwo Client</strong>.</li>
+</ol>
+<pre class="highlight swift"><code><span class="k">self</span><span class="o">.</span><span class="n">ziwoClient</span><span class="o">.</span><span class="nf">initializeClient</span><span class="p">()</span>
+<span class="k">self</span><span class="o">.</span><span class="n">ziwoClient</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+</code></pre>
+
+<p>The SDK currently log a lot of informations about the websocket and Verto protocol communication.
+If you want to deactivate the debug mode, set the <code>vertoDebug</code> boolean to <code>false</code>.</p>
+<h2 id='getting-help' class='heading'>Getting Help</h2>
+
+<ul>
+<li><strong>Have a bug to report?</strong> <a href="https://github.com/KalvadTech/ziwo-sdk-ios/issues">Open a GitHub issue</a>. If possible, include the version of ZiwoSDK, a full log, and a project that shows the issue.</li>
+<li><strong>Have a feature request?</strong> <a href="https://github.com/KalvadTech/ziwo-sdk-ios/issues">Open a GitHub issue</a>. Tell us what the feature should do and why you want the feature.</li>
+</ul>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>Pull requests are welcome. For major changes, <a href="https://github.com/KalvadTech/ziwo-sdk-ios/issues">please open an issue</a> first to discuss what you would like to change.</p>
 
           </section>
         </section>
