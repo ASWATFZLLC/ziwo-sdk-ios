@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RTCClient Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/RTCClient" class="dashAnchor"></a>
+    <a title="RTCClient Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ZiwoSDK 0.0.1 Docs</a> (91% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ZiwoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RTCClient Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Agent.html">Agent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Call.html">Call</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RTCClient.html">RTCClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoHelpers.html">VertoHelpers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoWebSocket.html">VertoWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoClient.html">ZiwoClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoSDK.html">ZiwoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RTCMessageType.html">RTCMessageType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SocketEvent.html">SocketEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertoEvent.html">VertoEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults.html">Defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults/Keys.html">– Keys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageBuilderProtocol.html">RTCMessageBuilderProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageParserProtocol.html">RTCMessageParserProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ZiwoClientDelegate.html">ZiwoClientDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RTCAnswerMessage.html">RTCAnswerMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCError.html">RTCError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCMessage.html">RTCMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCOfferMessage.html">RTCOfferMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RTCClient</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RTCClient</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">RTCClient</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">RTCClient</span><span class="p">:</span> <span class="kt">RTCPeerConnectionDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Class that manage all the RTC part of the SDK.
+It is used to setup the RTC connection of the call, generate offer/answer and handle in-call actions (mute, speaker on/off).</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC13stunServerURL33_A26F6BAB54D2E527AB08493B6CF61929LLSSvp"></a>
+                    <a name="//apple_ref/swift/Property/stunServerURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC13stunServerURL33_A26F6BAB54D2E527AB08493B6CF61929LLSSvp">stunServerURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default stun server</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">stunServerURL</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC16mediaConstraintsSo08RTCMediaE0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/mediaConstraints" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC16mediaConstraintsSo08RTCMediaE0Cvp">mediaConstraints</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default media constraint. Set to only receive audio.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">mediaConstraints</span><span class="p">:</span> <span class="kt">RTCMediaConstraints</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC14peerConnectionSo07RTCPeerE0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/peerConnection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC14peerConnectionSo07RTCPeerE0CSgvp">peerConnection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RTC peer connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC17connectionFactorySo017RTCPeerConnectionE0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/connectionFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC17connectionFactorySo017RTCPeerConnectionE0CSgvp">connectionFactory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RTC peer connection factory.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">connectionFactory</span><span class="p">:</span> <span class="kt">RTCPeerConnectionFactory</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC16audioLocalStreamSo08RTCMediaF0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/audioLocalStream" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC16audioLocalStreamSo08RTCMediaF0CSgvp">audioLocalStream</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RTC local stream.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">audioLocalStream</span><span class="p">:</span> <span class="kt">RTCMediaStream</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC10audioQueue33_A26F6BAB54D2E527AB08493B6CF61929LLSo17OS_dispatch_queueCvp"></a>
+                    <a name="//apple_ref/swift/Property/audioQueue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC10audioQueue33_A26F6BAB54D2E527AB08493B6CF61929LLSo17OS_dispatch_queueCvp">audioQueue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">audioQueue</span><span class="p">:</span> <span class="kt">DispatchQueue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC15rtcAudioSession33_A26F6BAB54D2E527AB08493B6CF61929LLSo08RTCAudioF0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/rtcAudioSession" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC15rtcAudioSession33_A26F6BAB54D2E527AB08493B6CF61929LLSo08RTCAudioF0Cvp">rtcAudioSession</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">rtcAudioSession</span><span class="p">:</span> <span class="kt">RTCAudioSession</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC8delegate33_A26F6BAB54D2E527AB08493B6CF61929LLAA0C8Delegate_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC8delegate33_A26F6BAB54D2E527AB08493B6CF61929LLAA0C8Delegate_pSgvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@ZiwoSDK@objc(cs)RTCClient(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@ZiwoSDK@objc(cs)RTCClient(im)init">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The RTC Client initialization perfom two main tasks. It setups the RTC peer connection first then configure the RTC ausio session.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC22setupRTCPeerConnectionyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupRTCPeerConnection()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC22setupRTCPeerConnectionyyF">setupRTCPeerConnection()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Setup the RTC peer connection. RTC configuration is locked for the moment and a default stun server is provided.
+Also create an audio local stream to add it to the peer connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupRTCPeerConnection</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC21configureAudioSession33_A26F6BAB54D2E527AB08493B6CF61929LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/configureAudioSession()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC21configureAudioSession33_A26F6BAB54D2E527AB08493B6CF61929LLyyF">configureAudioSession()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configures the audio session for the WebRTC connection setting the AVAudioSession mode to voice chat.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">configureAudioSession</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC17createLocalStream33_A26F6BAB54D2E527AB08493B6CF61929LLSo08RTCMediaF0CSgyF"></a>
+                    <a name="//apple_ref/swift/Method/createLocalStream()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC17createLocalStream33_A26F6BAB54D2E527AB08493B6CF61929LLSo08RTCMediaF0CSgyF">createLocalStream()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and configure a local stream that will be used linked to the peer connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">createLocalStream</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">RTCMediaStream</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC20setMicrophoneEnabledyySbF"></a>
+                    <a name="//apple_ref/swift/Method/setMicrophoneEnabled(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC20setMicrophoneEnabledyySbF">setMicrophoneEnabled(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add or remove local stream to the peer connection that enable microphone input.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setMicrophoneEnabled</span><span class="p">(</span><span class="n">_</span> <span class="nv">enabled</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>enabled</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean that defines whether the microphone is enabled or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/SDP%20Handlers"></a>
+                <a name="//apple_ref/swift/Section/SDP Handlers" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/SDP%20Handlers"></a>
+                  <h3 class="section-name"><p>SDP Handlers</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC19setLocalDescription07sessionF0ySo010RTCSessionF0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/setLocalDescription(sessionDescription:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC19setLocalDescription07sessionF0ySo010RTCSessionF0C_tF">setLocalDescription(sessionDescription:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a SDP (<code>RTCSessionDescription</code>) as local session description.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setLocalDescription</span><span class="p">(</span><span class="nv">sessionDescription</span><span class="p">:</span> <span class="kt">RTCSessionDescription</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessionDescription</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SDP that will be set as local SDP.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC20setRemoteDescription4type3sdpySo10RTCSdpTypeV_SStF"></a>
+                    <a name="//apple_ref/swift/Method/setRemoteDescription(type:sdp:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC20setRemoteDescription4type3sdpySo10RTCSdpTypeV_SStF">setRemoteDescription(type:<wbr>sdp:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a SDP (<code>RTCSessionDescription</code>) as remote session description.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setRemoteDescription</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">RTCSdpType</span><span class="p">,</span> <span class="nv">sdp</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Is either an <code>.Offer</code> or <code>.Answer</code> according to the RTC Message.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sdp</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SDP that will be set as local SDP.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC12createAnsweryyF"></a>
+                    <a name="//apple_ref/swift/Method/createAnswer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC12createAnsweryyF">createAnswer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Uses the WebRTC peer connection to create an answer in order to respond to a received offer and initialize a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createAnswer</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC11createOffer10PromiseKit0F0CyytGyF"></a>
+                    <a name="//apple_ref/swift/Method/createOffer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC11createOffer10PromiseKit0F0CyytGyF">createOffer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Uses the WebRTC peer connection to create an offer in order to initiate a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createOffer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A promise that is fulfilled when the offer is successfully created and the local SDP has been setted.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC12addCandidate33_A26F6BAB54D2E527AB08493B6CF61929LL16candidateMessageyAA012RTCCandidateO0V_tF"></a>
+                    <a name="//apple_ref/swift/Method/addCandidate(candidateMessage:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC12addCandidate33_A26F6BAB54D2E527AB08493B6CF61929LL16candidateMessageyAA012RTCCandidateO0V_tF">addCandidate(candidateMessage:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a candidate to the peer connection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">addCandidate</span><span class="p">(</span><span class="nv">candidateMessage</span><span class="p">:</span> <span class="kt"><a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>candidateMessage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The candidate that will be added to the peer connection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/RTC%20Client%20Delegates"></a>
+                <a name="//apple_ref/swift/Section/RTC Client Delegates" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/RTC%20Client%20Delegates"></a>
+                  <h3 class="section-name"><p>RTC Client Delegates</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC10logMessageyyAA10RTCMessageVF"></a>
+                    <a name="//apple_ref/swift/Method/logMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC10logMessageyyAA10RTCMessageVF">logMessage(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Logs message whenever the RTC Client receive or send a message.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">logMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt"><a href="../Structs/RTCMessage.html">RTCMessage</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message received</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC15closeConnectionyyF"></a>
+                    <a name="//apple_ref/swift/Method/closeConnection()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC15closeConnectionyyF">closeConnection()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Triggered when the connection is terminated.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">closeConnection</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/RTC%20Peer%20Connection%20Delegates"></a>
+                <a name="//apple_ref/swift/Section/RTC Peer Connection Delegates" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/RTC%20Peer%20Connection%20Delegates"></a>
+                  <h3 class="section-name"><p>RTC Peer Connection Delegates</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didAddStream:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didAdd:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didAddStream:">peerConnection(_:<wbr>didAdd:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didAdd</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">RTCMediaStream</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didGenerateIceCandidate:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didGenerate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didGenerateIceCandidate:">peerConnection(_:<wbr>didGenerate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didGenerate</span> <span class="nv">candidate</span><span class="p">:</span> <span class="kt">RTCIceCandidate</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didRemoveStream:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didRemove:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didRemoveStream:">peerConnection(_:<wbr>didRemove:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didRemove</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">RTCMediaStream</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnectionShouldNegotiate:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnectionShouldNegotiate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnectionShouldNegotiate:">peerConnectionShouldNegotiate(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnectionShouldNegotiate</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeIceConnectionState:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeIceConnectionState:">peerConnection(_:<wbr>didChange:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">newState</span><span class="p">:</span> <span class="kt">RTCIceConnectionState</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeIceGatheringState:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeIceGatheringState:">peerConnection(_:<wbr>didChange:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">newState</span><span class="p">:</span> <span class="kt">RTCIceGatheringState</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didRemoveIceCandidates:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didRemove:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didRemoveIceCandidates:">peerConnection(_:<wbr>didRemove:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didRemove</span> <span class="nv">candidates</span><span class="p">:</span> <span class="p">[</span><span class="kt">RTCIceCandidate</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeSignalingState:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didChange:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didChangeSignalingState:">peerConnection(_:<wbr>didChange:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">stateChanged</span><span class="p">:</span> <span class="kt">RTCSignalingState</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didOpenDataChannel:"></a>
+                    <a name="//apple_ref/swift/Method/peerConnection(_:didOpen:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@ZiwoSDK@objc(cs)RTCClient(im)peerConnection:didOpenDataChannel:">peerConnection(_:<wbr>didOpen:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">peerConnection</span><span class="p">(</span><span class="n">_</span> <span class="nv">peerConnection</span><span class="p">:</span> <span class="kt">RTCPeerConnection</span><span class="p">,</span> <span class="n">didOpen</span> <span class="nv">dataChannel</span><span class="p">:</span> <span class="kt">RTCDataChannel</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Audio%20control"></a>
+                <a name="//apple_ref/swift/Section/Audio control" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Audio%20control"></a>
+                  <h3 class="section-name"><p>Audio control</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC10speakerOffyyF"></a>
+                    <a name="//apple_ref/swift/Method/speakerOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC10speakerOffyyF">speakerOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fallback to the default playing device: headphones / bluetooth / ear speaker.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">speakerOff</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK9RTCClientC9speakerOnyyF"></a>
+                    <a name="//apple_ref/swift/Method/speakerOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK9RTCClientC9speakerOnyyF">speakerOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set audio configuration to speaker.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">speakerOn</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/KalvadTech/ziwo-sdk-ios" target="_blank" rel="external">Emilien Roussel</a>. All rights reserved. (Last updated: 2020-05-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

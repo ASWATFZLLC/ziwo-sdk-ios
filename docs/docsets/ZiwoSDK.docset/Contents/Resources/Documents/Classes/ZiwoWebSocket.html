@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ZiwoWebSocket Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ZiwoWebSocket" class="dashAnchor"></a>
+    <a title="ZiwoWebSocket Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ZiwoSDK 0.0.1 Docs</a> (91% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ZiwoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ZiwoWebSocket Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Agent.html">Agent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Call.html">Call</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RTCClient.html">RTCClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoHelpers.html">VertoHelpers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoWebSocket.html">VertoWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoClient.html">ZiwoClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoSDK.html">ZiwoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RTCMessageType.html">RTCMessageType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SocketEvent.html">SocketEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertoEvent.html">VertoEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults.html">Defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults/Keys.html">– Keys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageBuilderProtocol.html">RTCMessageBuilderProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageParserProtocol.html">RTCMessageParserProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ZiwoClientDelegate.html">ZiwoClientDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RTCAnswerMessage.html">RTCAnswerMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCError.html">RTCError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCMessage.html">RTCMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCOfferMessage.html">RTCOfferMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ZiwoWebSocket</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ZiwoWebSocket</span></code></pre>
+
+                </div>
+              </div>
+            <p>ZiwoWebSocket is the parent class of <code>DomainWebSocket</code> and <code><a href="../Classes/VertoWebSocket.html">VertoWebSocket</a></code> that contain the web socket of those two classes.
+It also have a boolean that can be set in the child classes to activate or deactivate the logs.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK0A9WebSocketC03webD010Starscream0cD0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/webSocket" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK0A9WebSocketC03webD010Starscream0cD0CSgvp">webSocket</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The websocket connected to <code>Verto</code> or the <code>Ziwo domain</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">webSocket</span><span class="p">:</span> <span class="kt">WebSocket</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK0A9WebSocketC5debugSbvp"></a>
+                    <a name="//apple_ref/swift/Property/debug" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK0A9WebSocketC5debugSbvp">debug</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Boolean that activate / deactivate the debug mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="k">var</span> <span class="nv">debug</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Utils%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Utils Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Utils%20Methods"></a>
+                  <h3 class="section-name"><p>Utils Methods</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK0A9WebSocketC8printLog7messageySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/printLog(message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK0A9WebSocketC8printLog7messageySS_tF">printLog(message:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Parent method that prints log of <code><a href="../Classes/VertoWebSocket.html">VertoWebSocket</a></code> and <code>DomainWebSocket</code> classes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">printLog</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Message to display in console.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/KalvadTech/ziwo-sdk-ios" target="_blank" rel="external">Emilien Roussel</a>. All rights reserved. (Last updated: 2020-05-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RTCMessageParserProtocol Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RTCMessageParserProtocol" class="dashAnchor"></a>
+    <a title="RTCMessageParserProtocol Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ZiwoSDK 0.0.1 Docs</a> (91% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ZiwoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RTCMessageParserProtocol Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Agent.html">Agent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Call.html">Call</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RTCClient.html">RTCClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoHelpers.html">VertoHelpers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoWebSocket.html">VertoWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoClient.html">ZiwoClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoSDK.html">ZiwoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RTCMessageType.html">RTCMessageType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SocketEvent.html">SocketEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertoEvent.html">VertoEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults.html">Defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults/Keys.html">– Keys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageBuilderProtocol.html">RTCMessageBuilderProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageParserProtocol.html">RTCMessageParserProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ZiwoClientDelegate.html">ZiwoClientDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RTCAnswerMessage.html">RTCAnswerMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCError.html">RTCError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCMessage.html">RTCMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCOfferMessage.html">RTCOfferMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RTCMessageParserProtocol</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">RTCMessageParserProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol that parse GoogleRTC messages in order to build RTC messages to handle peer candidates &amp; offers/answers.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK24RTCMessageParserProtocolP18RTCSpecificMessageQa"></a>
+                    <a name="//apple_ref/swift/Alias/RTCSpecificMessage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK24RTCMessageParserProtocolP18RTCSpecificMessageQa">RTCSpecificMessage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">RTCSpecificMessage</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK24RTCMessageParserProtocolP5parse7payload18RTCSpecificMessageQzSgSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/parse(payload:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK24RTCMessageParserProtocolP5parse7payload18RTCSpecificMessageQzSgSDySSypG_tFZ">parse(payload:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">parse</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/RTCMessageParserProtocol.html#/s:7ZiwoSDK24RTCMessageParserProtocolP18RTCSpecificMessageQa">RTCSpecificMessage</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/KalvadTech/ziwo-sdk-ios" target="_blank" rel="external">Emilien Roussel</a>. All rights reserved. (Last updated: 2020-05-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

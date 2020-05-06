@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VertoHelpers Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/VertoHelpers" class="dashAnchor"></a>
+    <a title="VertoHelpers Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ZiwoSDK 0.0.1 Docs</a> (91% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ZiwoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        VertoHelpers Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Agent.html">Agent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Call.html">Call</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RTCClient.html">RTCClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoHelpers.html">VertoHelpers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoWebSocket.html">VertoWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoClient.html">ZiwoClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoSDK.html">ZiwoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RTCMessageType.html">RTCMessageType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SocketEvent.html">SocketEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertoEvent.html">VertoEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults.html">Defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults/Keys.html">– Keys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageBuilderProtocol.html">RTCMessageBuilderProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageParserProtocol.html">RTCMessageParserProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ZiwoClientDelegate.html">ZiwoClientDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RTCAnswerMessage.html">RTCAnswerMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCError.html">RTCError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCMessage.html">RTCMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCOfferMessage.html">RTCOfferMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>VertoHelpers</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">VertoHelpers</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class helps to format well-formatted JSON-RPC in order to communicate with Verto protocol.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC13REMOTE_NUMBERSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/REMOTE_NUMBER" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC13REMOTE_NUMBERSSvpZ">REMOTE_NUMBER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">REMOTE_NUMBER</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC5toMd55valueS2S_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/toMd5(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC5toMd55valueS2S_tFZ">toMd5(value:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encrypt string to md5.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">toMd5</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string to encrypt.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>MD5-encrypted string.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC25convertStringToDictionaryySDySSyXlGSgSSFZ"></a>
+                    <a name="//apple_ref/swift/Method/convertStringToDictionary(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC25convertStringToDictionaryySDySSyXlGSgSSFZ">convertStringToDictionary(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generic method that convert a string into a swift dictionary. This helps to parse messages from the Verto websocket.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">convertStringToDictionary</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String to converto to dictionary.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A swift dictionary based on the given message.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC11getLoginRPC02ccF00H8Password10SwiftyJSON0K0VSS_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/getLoginRPC(ccLogin:ccPassword:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC11getLoginRPC02ccF00H8Password10SwiftyJSON0K0VSS_SStFZ">getLoginRPC(ccLogin:<wbr>ccPassword:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to log user on Verto.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getLoginRPC</span><span class="p">(</span><span class="nv">ccLogin</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">ccPassword</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ccLogin</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Agent&rsquo;s ccLogin.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ccPassword</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Agent&rsquo;s ccPassword.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to log the agent on Verto.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC13createCallRPC6method10agentEmail3sdp6sessId6callID10SwiftyJSON0Q0VSS_S4StFZ"></a>
+                    <a name="//apple_ref/swift/Method/createCallRPC(method:agentEmail:sdp:sessId:callID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC13createCallRPC6method10agentEmail3sdp6sessId6callID10SwiftyJSON0Q0VSS_S4StFZ">createCallRPC(method:<wbr>agentEmail:<wbr>sdp:<wbr>sessId:<wbr>callID:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to initiate either a call creation (<code>verto.invite</code>) or answer a call (<code>verto.answer</code>) on Verto.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createCallRPC</span><span class="p">(</span><span class="nv">method</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">agentEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sdp</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Should be <code>invite</code> for call creation or <code>answer</code> for call answer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agentEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email of the agent that send this message to Verto.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sdp</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>SDP of the current agent.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Session ID of the Verto websocket.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to create or accept a Verto call.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC16createHoldAction10agentEmail6sessId6callID4isOn10SwiftyJSON0Q0VSS_S2SSbtFZ"></a>
+                    <a name="//apple_ref/swift/Method/createHoldAction(agentEmail:sessId:callID:isOn:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC16createHoldAction10agentEmail6sessId6callID4isOn10SwiftyJSON0Q0VSS_S2SSbtFZ">createHoldAction(agentEmail:<wbr>sessId:<wbr>callID:<wbr>isOn:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to hold or unhold a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">createHoldAction</span><span class="p">(</span><span class="nv">agentEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agentEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email of the agent that send this message to Verto.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Session ID of the Verto websocket.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isOn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean that set the call on hold (<code>true</code>) or unhold (<code>false</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to handle a hold state of a call.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC9sendDigit10agentEmail6sessId6callID6number10SwiftyJSON0O0VSS_S3StFZ"></a>
+                    <a name="//apple_ref/swift/Method/sendDigit(agentEmail:sessId:callID:number:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC9sendDigit10agentEmail6sessId6callID6number10SwiftyJSON0O0VSS_S3StFZ">sendDigit(agentEmail:<wbr>sessId:<wbr>callID:<wbr>number:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to send a digit to the Verto protocol via a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">sendDigit</span><span class="p">(</span><span class="nv">agentEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agentEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email of the agent that send this message to Verto.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Session ID of the Verto websocket.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>number</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Digit that can be sent. (0 to 9, # and *)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to send a digit to a Verto call.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC13blindTransfer10agentEmail6sessId6callID6number10SwiftyJSON0O0VSS_S3StFZ"></a>
+                    <a name="//apple_ref/swift/Method/blindTransfer(agentEmail:sessId:callID:number:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC13blindTransfer10agentEmail6sessId6callID6number10SwiftyJSON0O0VSS_S3StFZ">blindTransfer(agentEmail:<wbr>sessId:<wbr>callID:<wbr>number:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to transfer a call without attendance.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">blindTransfer</span><span class="p">(</span><span class="nv">agentEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agentEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email of the agent that send this message to Verto.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Session ID of the Verto websocket.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>number</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The targeted number where the call will be transfered.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to transfer a call without attendance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC10callAnswer2id6method10SwiftyJSON0J0VSi_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/callAnswer(id:method:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC10callAnswer2id6method10SwiftyJSON0J0VSi_SStFZ">callAnswer(id:<wbr>method:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to indicate the Verto protocol that the agent has accepted the call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">callAnswer</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Method sent to Verto protocol.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to communicate with Verto protocol.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK12VertoHelpersC10hangupCall10agentEmail6callID6sessId10SwiftyJSON0N0VSS_S2StFZ"></a>
+                    <a name="//apple_ref/swift/Method/hangupCall(agentEmail:callID:sessId:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK12VertoHelpersC10hangupCall10agentEmail6callID6sessId10SwiftyJSON0N0VSS_S2StFZ">hangupCall(agentEmail:<wbr>callID:<wbr>sessId:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a RPC-JSON to terminate the call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">hangupCall</span><span class="p">(</span><span class="nv">agentEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">JSON</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>agentEmail</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The email of the agent that send this message to Verto.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sessId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Session ID of the Verto websocket.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A JSON value that will be used to hangup.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/KalvadTech/ziwo-sdk-ios" target="_blank" rel="external">Emilien Roussel</a>. All rights reserved. (Last updated: 2020-05-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

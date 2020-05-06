@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VertoWebSocket Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/VertoWebSocket" class="dashAnchor"></a>
+    <a title="VertoWebSocket Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ZiwoSDK 0.0.1 Docs</a> (91% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ZiwoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        VertoWebSocket Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Agent.html">Agent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Call.html">Call</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RTCClient.html">RTCClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoHelpers.html">VertoHelpers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertoWebSocket.html">VertoWebSocket</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoClient.html">ZiwoClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoSDK.html">ZiwoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RTCMessageType.html">RTCMessageType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SocketEvent.html">SocketEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertoEvent.html">VertoEvent</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults.html">Defaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Defaults/Keys.html">– Keys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCClientDelegate.html">RTCClientDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageBuilderProtocol.html">RTCMessageBuilderProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RTCMessageParserProtocol.html">RTCMessageParserProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ZiwoClientDelegate.html">ZiwoClientDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/RTCAnswerMessage.html">RTCAnswerMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCCandidateMessage.html">RTCCandidateMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCError.html">RTCError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCMessage.html">RTCMessage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RTCOfferMessage.html">RTCOfferMessage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>VertoWebSocket</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">VertoWebSocket</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">VertoWebSocket</span><span class="p">:</span> <span class="kt">WebSocketDelegate</span></code></pre>
+
+                </div>
+              </div>
+            <p>Subclass of <code><a href="../Classes/ZiwoWebSocket.html">ZiwoWebSocket</a></code> that uses websockets to help the communication between the protocol <code>Verto</code> and iOS.
+The class listen all the websocket messages and parses the methods sent by <code>Verto</code> in order to notify the app.
+Through this class, the user is able to call an agent, receive a call from outside, mute his microphone, switch the audio source, put the call on hold.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC8delegate33_03F6BEDE71E2943EAD73B1F844D38FE5LLAA0cdE8Delegate_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC8delegate33_03F6BEDE71E2943EAD73B1F844D38FE5LLAA0cdE8Delegate_pSgvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Protocol that handle both websocket connection state and <code>Verto</code> callbacks during its initialization and during a lifetime of a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC6sessIdSSvp"></a>
+                    <a name="//apple_ref/swift/Property/sessId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC6sessIdSSvp">sessId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ID of the Verto session defined after a login request (<code>func sendLoginRequest()</code>)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sessId</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC3url8delegateAC10Foundation3URLV_AA0cdE8Delegate_ptcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(url:delegate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC3url8delegateAC10Foundation3URLV_AA0cdE8Delegate_ptcfc">init(url:<wbr>delegate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Class initializer that create the websocket and connect the delegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/VertoWebSocketDelegate.html">VertoWebSocketDelegate</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL of the websocket</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Delegate to connects</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC7connectyyF"></a>
+                    <a name="//apple_ref/swift/Method/connect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC7connectyyF">connect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connects the Verto websocket.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">connect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC10disconnectyyF"></a>
+                    <a name="//apple_ref/swift/Method/disconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC10disconnectyyF">disconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Disconnects the Verto websocket.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">disconnect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Socket%20Message%20Parsing"></a>
+                <a name="//apple_ref/swift/Section/Socket Message Parsing" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Socket%20Message%20Parsing"></a>
+                  <h3 class="section-name"><p>Socket Message Parsing</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC12parseMessageyySSF"></a>
+                    <a name="//apple_ref/swift/Method/parseMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC12parseMessageyySSF">parseMessage(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This methods parses the messages received by the Verto websocket.
+It converts a string into a dictionnary in order to handle the different <code>Verto</code> methods.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parseMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message received via the Verto websocket to parse and handle</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC05parseE7MessageyySDyS2SGF"></a>
+                    <a name="//apple_ref/swift/Method/parseSocketMessage(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC05parseE7MessageyySDyS2SGF">parseSocketMessage(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Given a dictionnary received by the websocket, extract the ID of the Verto session and store it in <code><a href="../Classes/VertoWebSocket.html#/s:7ZiwoSDK14VertoWebSocketC6sessIdSSvp">sessId</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parseSocketMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Dictionnary that contains the ID of the Verto session.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC05parseC5EventyySS_SiSDySSypGtF"></a>
+                    <a name="//apple_ref/swift/Method/parseVertoEvent(_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC05parseC5EventyySS_SiSDySSypGtF">parseVertoEvent(_:<wbr>_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Format a Verto event from a message that have been parsed (by <code>func parseMessage(_ message: String)</code>) to handle the behavior and call the correct delegate.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parseVertoEvent</span><span class="p">(</span><span class="n">_</span> <span class="nv">method</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">params</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>method</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String raw value of <code><a href="../Enums/VertoEvent.html">VertoEvent</a></code> enum.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the Verto message.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>params</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters returned by the Verto protocol.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Mod_verto%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Mod_verto Methods" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Mod_verto%20Methods"></a>
+                  <h3 class="section-name"><p>Mod_verto Methods</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC16sendLoginRequestyyF"></a>
+                    <a name="//apple_ref/swift/Method/sendLoginRequest()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC16sendLoginRequestyyF">sendLoginRequest()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to authenticate the agent.
+If the request if correct and successfully sent. The protocol will send a <code>verto.clientReady</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendLoginRequest</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC16sendCallCreation7callRPCySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/sendCallCreation(callRPC:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC16sendCallCreation7callRPCySS_tF">sendCallCreation(callRPC:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to initiate (the key <code>method</code> will have the value <code>invite</code>)
+or answer a call (<code>method</code> will have the value <code>answer</code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendCallCreation</span><span class="p">(</span><span class="nv">callRPC</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callRPC</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>JSON RPC generated (by <code>VertoHelpers.createCallRPC(method: String, agentEmail: String, sdp: String, sessId: String, callID: String</code>)) that will be sent to Verto protocol</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC14sendCallAnsweryySi_SDyS2SGtF"></a>
+                    <a name="//apple_ref/swift/Method/sendCallAnswer(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC14sendCallAnsweryySi_SDyS2SGtF">sendCallAnswer(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to initiate (the key <code>method</code> will have the value <code>invite</code>)
+or answer a call (<code>method</code> will have the value <code>answer</code>) by sending back the RPC.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendCallAnswer</span><span class="p">(</span><span class="n">_</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">params</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callRPC</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>JSON RPC generated (by <code>VertoHelpers.createCallRPC(method: String, agentEmail: String, sdp: String, sessId: String, callID: String</code>)) that will be sent to Verto protocol</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC6hangup6callIDySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/hangup(callID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC6hangup6callIDySS_tF">hangup(callID:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to terminate the call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">hangup</span><span class="p">(</span><span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the call you want to hangup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC14sendBackInviteyySi_SDyS2SGtF"></a>
+                    <a name="//apple_ref/swift/Method/sendBackInvite(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC14sendBackInviteyySi_SDyS2SGtF">sendBackInvite(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to indicate that the agent is callable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendBackInvite</span><span class="p">(</span><span class="n">_</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">params</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the previous <code>verto.invite</code> Verto request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>params</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Dictionnary that contains incoming calls informations.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC15sendBackDisplayyySiF"></a>
+                    <a name="//apple_ref/swift/Method/sendBackDisplay(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC15sendBackDisplayyySiF">sendBackDisplay(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to indicate that everything is set and the call is ready to be displayed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendBackDisplay</span><span class="p">(</span><span class="n">_</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>id</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The ID of the previous <code>verto.invite</code> Verto request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC14sendHoldAction6callID_ySS_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/sendHoldAction(callID:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC14sendHoldAction6callID_ySS_SbtF">sendHoldAction(callID:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to hold or unhold a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendHoldAction</span><span class="p">(</span><span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isOn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean that indicate whether the call has to be held or unheld.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC9sendDigit6callID6numberySS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/sendDigit(callID:number:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC9sendDigit6callID6numberySS_SStF">sendDigit(callID:<wbr>number:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to send a digit to a call.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendDigit</span><span class="p">(</span><span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>number</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The digit that will be sent to the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC13blindTransfer6callID6numberySS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/blindTransfer(callID:number:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC13blindTransfer6callID6numberySS_SStF">blindTransfer(callID:<wbr>number:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a JSON RPC to Verto protocol to indicate that the call has to be transfer to a designed number.
+This is a non-attendance transfer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">blindTransfer</span><span class="p">(</span><span class="nv">callID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ID of the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>number</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Number to which the call will be redirected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Web%20socket%20delegate"></a>
+                <a name="//apple_ref/swift/Section/Web socket delegate" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Web%20socket%20delegate"></a>
+                  <h3 class="section-name"><p>Web socket delegate</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7ZiwoSDK14VertoWebSocketC10didReceive5event6clienty10Starscream0dE5EventO_AG0dE0CtF"></a>
+                    <a name="//apple_ref/swift/Method/didReceive(event:client:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7ZiwoSDK14VertoWebSocketC10didReceive5event6clienty10Starscream0dE5EventO_AG0dE0CtF">didReceive(event:<wbr>client:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate that will trigger <code>VertoWebSocket</code> delegates (websocket state, received messages from Verto protocol).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">didReceive</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">WebSocketEvent</span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">WebSocket</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/KalvadTech/ziwo-sdk-ios" target="_blank" rel="external">Emilien Roussel</a>. All rights reserved. (Last updated: 2020-05-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

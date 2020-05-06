@@ -137,7 +137,4 @@ iOSInjectionProject/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-### Jazzy Docs ###
-/docs
-
 # End of https://www.gitignore.io/api/xcode,macos,swift,cocoapods
