@@ -14,7 +14,7 @@ import PromiseKit
  Protocol used to display different interaction of the RTC Client.
  */
 protocol RTCClientDelegate: class {
-    /// Describe the generation of a specific message (`answer` or`offer`)
+    /// Describe the generation of a specific message (`answer` or `offer`)
     func logMessage(_ message: RTCMessage)
     /// Triggered when the RTC Client has closed or losed the connection.
     func closeConnection()
