@@ -58,8 +58,8 @@ self.ziwoClient.initializeClient()
 self.ziwoClient.delegate = self
 ```
 
-Et voilà! ZiwoSDK is fully initialized and is now able to make and receive calls. (see `ZiwoClientDelegate` methods)
-The SDK currently log a lot of informations about the websocket and Verto protocol communication.
+Et voilà! ZiwoSDK is fully initialized and is now able to make and receive calls. (see `ZiwoClientDelegate` methods).
+The SDK is currently logging a lot of informations about the websocket and Verto protocol communication.
 If you want to deactivate the debug mode, set the `vertoDebug` boolean to `false`.
 
 ## Getting Help
