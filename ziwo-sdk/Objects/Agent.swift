@@ -13,11 +13,17 @@ import Foundation
  */
 public class Agent {
     
+    /// Agent's ID
     var id: Int = 0
+    /// Agent's email
     var email: String = ""
+    /// Agent's first name
     var firstName: String = ""
+    /// Agent's last name
     var lastName: String = ""
+    /// Agent's ccPassword
     var ccPassword: String = ""
+    /// Agent's ccLogin
     var ccLogin: String = ""
     
     /**

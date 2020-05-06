@@ -36,11 +36,16 @@ struct RTCError {
 */
 class RTCClient: NSObject {
     
+    /// Default stun server
     private let stunServerURL: String = "stun:stun.l.google.com:19302"
     
+    /// Default media constraint. Set to only receive audio.
     let mediaConstraints = RTCMediaConstraints(mandatoryConstraints: ["OfferToReceiveAudio": "true"], optionalConstraints: nil)
+    /// RTC peer connection.
     var peerConnection: RTCPeerConnection?
+    /// RTC peer connection factory.
     var connectionFactory: RTCPeerConnectionFactory? = nil
+    /// RTC local stream.
     var audioLocalStream: RTCMediaStream?
     
     private let audioQueue = DispatchQueue(label: "audio")

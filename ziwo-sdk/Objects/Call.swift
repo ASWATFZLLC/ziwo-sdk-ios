@@ -13,14 +13,22 @@ import Foundation
  */
 public class Call {
     
+    /// Instance of RTC Client. Each call has one RTC Client attached.
     internal let rtcClient = RTCClient.init()
+    /// Speaker state (on speaker or internal earphone).
     internal var speakerState: Bool = false
+    /// Is the call on hold state or not.
     internal var isPaused: Bool = false
+    /// Is the microphone muted on this call or not.
     internal var isMuted: Bool = false
     
+    /// ID of the call
     public var callID: String = ""
+    /// Verto session ID to which the call is linked.
     public var sessID: String = ""
+    /// Name of the caller.
     public var callerName: String = ""
+    /// Name of the recipient.
     public var recipientName: String = ""
     
     /**
