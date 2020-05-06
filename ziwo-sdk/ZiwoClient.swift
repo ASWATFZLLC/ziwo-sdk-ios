@@ -9,6 +9,8 @@
 import Foundation
 
 public protocol ZiwoClientDelegate {
+    
+    // MARK: - Verto Related
     func vertoIsConnected()
     func vertoIsDisconnected()
     func vertoClientIsReady()
@@ -16,6 +18,7 @@ public protocol ZiwoClientDelegate {
     func vertoReceivedCall(callerID: String)
     func vertoCallEnded()
     
+    // MARK: - Domain Related
     func domainIsConnected()
     func domainIsDisconnected()
 }
@@ -109,7 +112,7 @@ public class ZiwoClient {
                     return
                 }
 
-                vertoWS.sendCallCreation(callID: call.callID, callRPC: callRPC)
+                vertoWS.sendCallCreation(callRPC: callRPC)
             }
         }.catch { error in
             print("[Ziwo SDK - Call] - Error occured while creating offer : \(error.localizedDescription)")
@@ -131,7 +134,7 @@ public class ZiwoClient {
                     return
         }
 
-        socket.sendCallCreation(callID: callID, callRPC: callRPC)
+        socket.sendCallCreation(callRPC: callRPC)
     }
     
     // MARK: - In-Call Methods

@@ -35,12 +35,12 @@ class VertoHelpers {
     static var REMOTE_NUMBER = ""
     
     /**
-    Encrypt string to md5.
+     Encrypt string to md5.
 
-    - Parameters:
+     - Parameters:
        - value: The string to encrypt.
 
-    - Returns: MD5-encrypted string.
+     - Returns: MD5-encrypted string.
     */
     static func toMd5(value: String) -> String {
         let data = Data(value.utf8)
@@ -53,12 +53,12 @@ class VertoHelpers {
     }
     
     /**
-    Generic method that convert a string into a swift dictionary. This helps to parse messages from the Verto websocket.
+     Generic method that convert a string into a swift dictionary. This helps to parse messages from the Verto websocket.
 
-    - Parameters:
+     - Parameters:
        - message: String to converto to dictionary.
 
-    - Returns: A swift dictionary based on the given message.
+     - Returns: A swift dictionary based on the given message.
     */
     static func convertStringToDictionary(_ message: String) -> [String: AnyObject]? {
         if let data = message.data(using: .utf8) {
@@ -72,13 +72,13 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to log user on Verto.
+     Format a RPC-JSON to log user on Verto.
 
-    - Parameters:
+     - Parameters:
         - ccLogin: Agent's ccLogin.
         - ccPassword: Agent's ccPassword.
 
-    - Returns: A JSON value that will be used to log the agent on Verto.
+     - Returns: A JSON value that will be used to log the agent on Verto.
     */
     static func getLoginRPC(ccLogin: String, ccPassword: String) -> JSON {
         guard let domain = Defaults[.domain] else {
@@ -101,16 +101,16 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to initiate either a call creation (`verto.invite`) or answer a call (`verto.answer`) on Verto.
+     Format a RPC-JSON to initiate either a call creation (`verto.invite`) or answer a call (`verto.answer`) on Verto.
 
-    - Parameters:
+     - Parameters:
         - method: Should be `invite` for call creation or `answer` for call answer.
         - agentEmail: The email of the agent that send this message to Verto.
         - sdp: SDP of the current agent.
         - sessId: Session ID of the Verto websocket.
         - callID: ID of the call.
 
-    - Returns: A JSON value that will be used to create or accept a Verto call.
+     - Returns: A JSON value that will be used to create or accept a Verto call.
     */
     static func createCallRPC(method: String, agentEmail: String, sdp: String, sessId: String, callID: String) -> JSON {
         let tag = UUID().uuidString.lowercased()
@@ -151,15 +151,15 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to hold or unhold a call.
+     Format a RPC-JSON to hold or unhold a call.
 
-    - Parameters:
+     - Parameters:
         - agentEmail: The email of the agent that send this message to Verto.
         - sessId: Session ID of the Verto websocket.
         - callID: ID of the call.
         - isOn: Boolean that set the call on hold (`true`) or unhold (`false`).
 
-    - Returns: A JSON value that will be used to handle a hold state of a call.
+     - Returns: A JSON value that will be used to handle a hold state of a call.
     */
     static func createHoldAction(agentEmail: String, sessId: String, callID: String, isOn: Bool) -> JSON {
         let tag = UUID().uuidString.lowercased()
@@ -200,15 +200,15 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to send a digit to the Verto protocol via a call.
+     Format a RPC-JSON to send a digit to the Verto protocol via a call.
 
-    - Parameters:
+     - Parameters:
         - agentEmail: The email of the agent that send this message to Verto.
         - sessId: Session ID of the Verto websocket.
         - callID: ID of the call.
         - number: Digit that can be sent. (0 to 9, # and *)
 
-    - Returns: A JSON value that will be used to send a digit to a Verto call.
+     - Returns: A JSON value that will be used to send a digit to a Verto call.
     */
     static func sendDigit(agentEmail: String, sessId: String, callID: String, number: String) -> JSON {
         let tag = UUID().uuidString.lowercased()
@@ -249,15 +249,15 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to transfer a call without attendance.
+     Format a RPC-JSON to transfer a call without attendance.
 
-    - Parameters:
+     - Parameters:
         - agentEmail: The email of the agent that send this message to Verto.
         - sessId: Session ID of the Verto websocket.
         - callID: ID of the call.
         - number: The targeted number where the call will be transfered.
 
-    - Returns: A JSON value that will be used to transfer a call without attendance.
+     - Returns: A JSON value that will be used to transfer a call without attendance.
     */
     static func blindTransfer(agentEmail: String, sessId: String, callID: String, number: String) -> JSON {
         let tag = UUID().uuidString.lowercased()
@@ -299,13 +299,13 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to indicate the Verto protocol that the agent has accepted the call.
+     Format a RPC-JSON to indicate the Verto protocol that the agent has accepted the call.
 
-    - Parameters:
+     - Parameters:
         - id: ID of the call.
         - method: Method sent to Verto protocol.
      
-    - Returns: A JSON value that will be used to communicate with Verto protocol.
+     - Returns: A JSON value that will be used to communicate with Verto protocol.
     */
     static func callAnswer(id: Int, method: String) -> JSON {
         return JSON([
@@ -318,14 +318,14 @@ class VertoHelpers {
     }
     
     /**
-    Format a RPC-JSON to terminate the call.
+     Format a RPC-JSON to terminate the call.
 
-    - Parameters:
+     - Parameters:
         - agentEmail: The email of the agent that send this message to Verto.
         - callID: ID of the call.
         - sessId: Session ID of the Verto websocket.
 
-    - Returns: A JSON value that will be used to hangup.
+     - Returns: A JSON value that will be used to hangup.
     */
     static func hangupCall(agentEmail: String, callID: String, sessId: String) -> JSON {
         let tag = UUID().uuidString.lowercased()

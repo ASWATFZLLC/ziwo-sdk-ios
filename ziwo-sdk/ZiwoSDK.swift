@@ -10,7 +10,6 @@ import Foundation
 import Starscream
 import Defaults
 
-
 /**
  The ZiwoSDK class is a singleton that is mainly use to retrieve Ziwo related datas once the Agent is logged.
  */

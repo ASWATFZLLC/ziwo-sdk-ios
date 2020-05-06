@@ -10,6 +10,8 @@ import Foundation
 import Starscream
 
 protocol DomainWebSocketDelegate {
+    
+    // MARK: - Web Socket Related
     func wsDomainConnected()
     func wsDomainDisconnected()
 }

@@ -118,7 +118,7 @@ class RTCClient: NSObject {
      Add or remove local stream to the peer connection that enable microphone input.
      
      - Parameters:
-        - enabled: Boolean that defines weither the microphone is enabled or not.
+        - enabled: Boolean that defines whether the microphone is enabled or not.
     */
     public func setMicrophoneEnabled(_ enabled: Bool) {
         guard let peerConnection = self.peerConnection else {
@@ -238,6 +238,9 @@ class RTCClient: NSObject {
     
     /**
      Adds a candidate to the peer connection.
+     
+     - Parameters:
+        - candidateMessage: The candidate that will be added to the peer connection.
     */
     private func addCandidate(candidateMessage: RTCCandidateMessage) {
         guard let peerConnection = self.peerConnection else {

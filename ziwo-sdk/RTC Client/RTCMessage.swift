@@ -20,8 +20,11 @@ enum SocketEvent: String {
  Specific type of a RTC message
 */
 enum RTCMessageType: String {
+    /// RTC Offer
     case offer = "offer"
+    /// RTC Answer
     case answer = "answer"
+    /// RTC Candidate
     case candidate = "candidate"
 }
 
@@ -44,7 +47,9 @@ protocol RTCMessageParserProtocol {
  Protocol that parse GoogleRTC messages in order to build RTC messages to handle peer candidates & offers/answers.
 */
 struct RTCMessage {
+    /// RTC Event
     let event: SocketEvent = .rtcMessage
+    /// RTC Payload
     let payload: [String: Any]
 }
 
