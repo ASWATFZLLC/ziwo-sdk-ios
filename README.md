@@ -27,9 +27,7 @@ pod 'ZiwoSDK'
 
 ## Initialization
 
-For further informations about the implementation, you can check the [example app available](https://github.com/KalvadTech/ziwo-sdk-ios/tree/master/ZiwoExampleApp).
-
-In order to setup Verto protocol, please the following steps.
+In order to setup the Ziwo SDK and the Verto protocol, follow the steps below.
 
 1. **Set the domain**.
 
@@ -61,6 +59,22 @@ self.ziwoClient.delegate = self
 Et voilà! ZiwoSDK is fully initialized and is now able to make and receive calls. (see `ZiwoClientDelegate` methods).
 The SDK is currently logging a lot of informations about the websocket and Verto protocol communication.
 If you want to deactivate the debug mode, set the `vertoDebug` boolean to `false`.
+
+## Example
+
+For further informations about the implementation, you can check the [example app available](https://github.com/KalvadTech/ziwo-sdk-ios/tree/master/ZiwoExampleApp).
+Please check the documentation of `ZiwoClient` and its delegates (ZiwoClientDelegate).
+
+- **To make a call**
+
+```swift
+self.ziwoClient.call(number: "+33XXXXXXXXX")
+```
+
+- **To receive a call**
+
+Link the delegate `ZiwoClientDelegate` to your controller. Whenever someone will call `ZiwoClientDelegate.vertoReceivedCall(callerID: String)` will be triggered.
+At any moment, you'll be able to retrieve the informations about the call by calling `ZiwoClient.findCall(callID: String)`.
 
 ## Getting Help
 
