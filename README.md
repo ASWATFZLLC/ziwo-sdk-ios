@@ -62,7 +62,7 @@ If you want to deactivate the debug mode, set the `vertoDebug` boolean to `false
 
 ## Example
 
-For further informations about the implementation, you can check the [example app available](https://github.com/KalvadTech/ziwo-sdk-ios/tree/master/ZiwoExampleApp).
+For further informations about the implementation, you can check the [example app available](https://github.com/ASWATFZLLC/ziwo-sdk-ios/tree/master/ZiwoExampleApp).
 Please check the documentation of `ZiwoClient` and its delegates (ZiwoClientDelegate).
 
 - **To make a call**
@@ -78,12 +78,12 @@ At any moment, you'll be able to retrieve the informations about the call by cal
 
 ## Getting Help
 
-- **Have a bug to report?** [Open a GitHub issue](https://github.com/KalvadTech/ziwo-sdk-ios/issues). If possible, include the version of ZiwoSDK, a full log, and a project that shows the issue.
-- **Have a feature request?** [Open a GitHub issue](https://github.com/KalvadTech/ziwo-sdk-ios/issues). Tell us what the feature should do and why you want the feature.
+- **Have a bug to report?** [Open a GitHub issue](https://github.com/ASWATFZLLC/ziwo-sdk-ios/issues). If possible, include the version of ZiwoSDK, a full log, and a project that shows the issue.
+- **Have a feature request?** [Open a GitHub issue](https://github.com/ASWATFZLLC/ziwo-sdk-ios/issues). Tell us what the feature should do and why you want the feature.
 
 
 ## Contributing
-Pull requests are welcome. For major changes, [please open an issue](https://github.com/KalvadTech/ziwo-sdk-ios/issues) first to discuss what you would like to change.
+Pull requests are welcome. For major changes, [please open an issue](https://github.com/ASWATFZLLC/ziwo-sdk-ios/issues) first to discuss what you would like to change.
 
 ## License
-ZiwoSDK is released under the GNU GPVL3 license. See [LICENSE](https://github.com/KalvadTech/ziwo-sdk-ios/blob/master/LICENSE) for details.
+ZiwoSDK is released under the GNU GPVL3 license. See [LICENSE](https://github.com/ASWATFZLLC/ziwo-sdk-ios/blob/master/LICENSE) for details.
