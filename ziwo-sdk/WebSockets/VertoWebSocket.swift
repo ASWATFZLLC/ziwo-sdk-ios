@@ -338,11 +338,10 @@ public class VertoWebSocket: ZiwoWebSocket {
 // MARK: - Web socket delegate
 
 extension VertoWebSocket: WebSocketDelegate {
-    
     /**
      Delegate that will trigger `VertoWebSocket` delegates (websocket state, received messages from Verto protocol).
      */
-    public func didReceive(event: WebSocketEvent, client: WebSocket) {
+    public func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient) {
         switch event {
         case .connected(_):
             self.printLog(message: "[Verto WebSocket - Web Socket Delegate] > Socket connected!")

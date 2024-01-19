@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZiwoSDK
+import ziwo_sdk
 
 class LoginViewController: UIViewController {
     

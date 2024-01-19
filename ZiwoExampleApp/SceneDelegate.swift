@@ -8,13 +8,12 @@
 
 import UIKit
 import Defaults
-import ZiwoSDK
-import Permission
+import ziwo_sdk
+import PermissionsKit
+import MicrophonePermission
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -38,13 +37,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func askPermission() {
-        Permission.microphone.request { status in
-            switch status {
-            case .denied:
-                print("Warning. You didn't grant an access to the microphone.")
-            default:
-                return
-            }
+		Permission.microphone.request {
+			switch Permission.microphone.status {
+			case .denied: print("Warning. You didn't grant an access to the microphone.")
+			default: return
+			}
         }
     }
 

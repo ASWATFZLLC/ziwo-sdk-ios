@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 import SwiftyJSON
-import ZiwoSDK
+import ziwo_sdk
 
 struct Network {
 

@@ -13,7 +13,7 @@ import PromiseKit
 /**
  Protocol used to display different interaction of the RTC Client.
  */
-protocol RTCClientDelegate: class {
+protocol RTCClientDelegate: AnyObject {
     /// Describe the generation of a specific message (`answer` or `offer`)
     func logMessage(_ message: RTCMessage)
     /// Triggered when the RTC Client has closed or losed the connection.
@@ -35,6 +35,7 @@ struct RTCError {
  It is used to setup the RTC connection of the call, generate offer/answer and handle in-call actions (mute, speaker on/off).
 */
 class RTCClient: NSObject {
+	let streamId: String = "aswat.ios.sdk"
     
     /// Default stun server
     private let stunServerURL: String = "stun:stun.l.google.com:19302"
@@ -45,8 +46,8 @@ class RTCClient: NSObject {
     var peerConnection: RTCPeerConnection?
     /// RTC peer connection factory.
     var connectionFactory: RTCPeerConnectionFactory? = nil
-    /// RTC local stream.
-    var audioLocalStream: RTCMediaStream?
+    /// RTC local track.
+    var audioLocalTrack: RTCAudioTrack?
     
     private let audioQueue = DispatchQueue(label: "audio")
     private let rtcAudioSession = RTCAudioSession.sharedInstance()
@@ -77,14 +78,14 @@ class RTCClient: NSObject {
         
         self.connectionFactory = RTCPeerConnectionFactory()
         self.peerConnection = self.connectionFactory!.peerConnection(with: config, constraints: self.mediaConstraints, delegate: self)
-        self.audioLocalStream = self.createLocalStream()
+        self.audioLocalTrack = self.createLocalTrack()
         
-        guard let localStream = self.audioLocalStream else {
-            print("[RTCClient - Setup RTC Connection] > Unable to create local stream")
+        guard let localStream = self.audioLocalTrack else {
+            print("[RTCClient - Setup RTC Connection] > Unable to create local track")
             return
         }
         
-        self.peerConnection?.add(localStream)
+		self.peerConnection?.add(localStream, streamIds: [self.streamId])
     }
     
     /**
@@ -94,8 +95,8 @@ class RTCClient: NSObject {
         self.rtcAudioSession.lockForConfiguration()
         
         do {
-            try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord.rawValue)
-            try self.rtcAudioSession.setMode(AVAudioSession.Mode.voiceChat.rawValue)
+            try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord)
+            try self.rtcAudioSession.setMode(AVAudioSession.Mode.voiceChat)
         } catch let error {
             print("[RTCClient - Audio Session Configuration] > Error changing AVAudioSession category: \(error)")
         }
@@ -104,19 +105,18 @@ class RTCClient: NSObject {
     }
     
     /**
-     Creates and configure a local stream that will be used linked to the peer connection.
+     Creates and configure a local track that will be used linked to the peer connection.
     */
-    private func createLocalStream() -> RTCMediaStream? {
+    private func createLocalTrack() -> RTCAudioTrack? {
         guard let factory = self.connectionFactory else {
             print("[RTCClient - Create Local Stream] > No connection factory available - nil")
             return nil
         }
         
-        let localStream = factory.mediaStream(withStreamId: UUID().uuidString)
-        let audioTrack = factory.audioTrack(withTrackId: UUID().uuidString)
-        localStream.addAudioTrack(audioTrack)
-        
-        return localStream
+		let audioConstrains = RTCMediaConstraints(mandatoryConstraints: nil, optionalConstraints: nil)
+		let audioSource = factory.audioSource(with: audioConstrains)
+		let audioTrack = factory.audioTrack(with: audioSource, trackId: "audio0")
+		return audioTrack
     }
     
     /**
@@ -131,12 +131,8 @@ class RTCClient: NSObject {
         }
         
         if enabled {
-            if let localStream = self.audioLocalStream, peerConnection.localStreams.isEmpty {
-                peerConnection.add(localStream)
-            }
-        } else {
-            if let localStream = self.audioLocalStream, !peerConnection.localStreams.isEmpty {
-                peerConnection.remove(localStream)
+            if let localTrack = self.audioLocalTrack, peerConnection.localStreams.isEmpty {
+				peerConnection.add(localTrack, streamIds: [self.streamId])
             }
         }
     }
@@ -253,7 +249,12 @@ class RTCClient: NSObject {
         }
         
         let iceCanditate = RTCIceCandidate(sdp: candidateMessage.candidate, sdpMLineIndex: candidateMessage.label, sdpMid: candidateMessage.id)
-        peerConnection.add(iceCanditate)
+		peerConnection.add(iceCanditate) { error in
+			if let error {
+				print("[RTCClient - Ice Candidate Addition] > Error : \(error.localizedDescription)")
+				return
+			}
+		}
     }
     
 }
@@ -353,7 +354,7 @@ extension RTCClient {
             self.rtcAudioSession.lockForConfiguration()
             
             do {
-                try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord.rawValue)
+                try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord)
                 try self.rtcAudioSession.overrideOutputAudioPort(.none)
             } catch let error {
                 print("Error setting AVAudioSession category: \(error)")
@@ -374,7 +375,7 @@ extension RTCClient {
             self.rtcAudioSession.lockForConfiguration()
             
             do {
-                try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord.rawValue)
+                try self.rtcAudioSession.setCategory(AVAudioSession.Category.playAndRecord)
                 try self.rtcAudioSession.overrideOutputAudioPort(.speaker)
                 try self.rtcAudioSession.setActive(true)
             } catch let error {
